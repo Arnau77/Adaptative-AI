@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     int defense;
     int mana;
     int levelOfChangeStats = 0;
+    bool firstFrame = true;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,11 @@ public class Player : MonoBehaviour
         if (!playerTurn)
             return;
 
-        //Debug.Log("My turn: " + playerName);
+        if (firstFrame)
+        {
+            Debug.Log("My turn: " + playerName);
+        }
+        firstFrame = false;
 
         endTurn = true;
        
@@ -75,6 +80,7 @@ public class Player : MonoBehaviour
         }
         if (endTurn)
         {
+            firstFrame = true;
             Debug.Log("A turn has passed: " + playerName);
         }
     }

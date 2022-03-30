@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public int manaSpentWithDecreasingStats = 10;
     public int manaSpentWithHealing = 25;
     bool endGame = false;
-    Player playerToStartNextTurn = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,27 +26,23 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerToStartNextTurn != null)
-        {
-            Debug.LogWarning("CHANGING TURN");
-            playerToStartNextTurn.playerTurn = true;
-            playerToStartNextTurn = null;
-        }
         if (player1.endTurn && player2.endTurn)
         {
+            player1.playerTurn = false;
+            player2.playerTurn = false;
             player1.endTurn = false;
             player2.endTurn = false;
-            playerToStartNextTurn = DecideFastestPlayer();
+            DecideFastestPlayer().playerTurn = true;
         }
         else if (player1.endTurn && player1.playerTurn)
         {
             player1.playerTurn = false;
-            playerToStartNextTurn = player2;
+            player2.playerTurn = true;
         }
         else if (player2.endTurn && player2.playerTurn)
         {
             player2.playerTurn = false;
-            playerToStartNextTurn = player1;
+            player1.playerTurn = true;
         }
         if (player1.dead)
         {
