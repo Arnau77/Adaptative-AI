@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int basicAttackDamage = 1;
     public int manaAttackDamage = 3;
     public int percentageRecoveryMana = 50;
+    public int percentageDefense = 50;
     public int maxOfTimesChangingLevelOfStats = 3;
     public int percentageChangingStats = 10;
     public int percentageHealing = 50;
@@ -16,7 +17,9 @@ public class GameManager : MonoBehaviour
     public int manaSpentWithIncreasingStats = 10;
     public int manaSpentWithDecreasingStats = 10;
     public int manaSpentWithHealing = 25;
+    public int manaSpentWithDefense = 15;
     bool endGame = false;
+    bool decidingOptions = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +35,8 @@ public class GameManager : MonoBehaviour
             player2.playerTurn = false;
             player1.endTurn = false;
             player2.endTurn = false;
-            DecideFastestPlayer().playerTurn = true;
+            DecideFastestPlayer(decidingOptions).playerTurn = true;
+            decidingOptions = !decidingOptions;
         }
         else if (player1.endTurn && player1.playerTurn)
         {
@@ -63,8 +67,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    Player DecideFastestPlayer()
+    Player DecideFastestPlayer(bool decidingOptions)
     {
+        if (decidingOptions)
+        {
+            return player1;
+        }
+
         int speed1 = player1.getSpeed();
         int speed2 = player2.getSpeed();
         if (speed1 == speed2)

@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    enum Options
+    {
+        NONE = 0,
+        ATTACK,
+        DEFENSE,
+        HEAL,
+        SPECIAL_ATTACK,
+        RECOVER_MANA,
+        INCREASE_STATS,
+        DECREASE_STATS
+    }
+
     [HideInInspector] public bool playerTurn = false;
     [HideInInspector] public bool endTurn = false;
     [HideInInspector] public bool dead = false;
@@ -22,6 +34,9 @@ public class Player : MonoBehaviour
     int mana;
     int levelOfChangeStats = 0;
     bool firstFrame = true;
+    float defendingBonus = 1;
+    Options optionChoosen;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,54 +50,99 @@ public class Player : MonoBehaviour
         if (!playerTurn)
             return;
 
-        if (firstFrame)
+        if (optionChoosen == Options.NONE)
         {
-            Debug.Log("My turn: " + playerName);
+            if (firstFrame)
+            {
+                Debug.Log(playerName + " please choose an option for this turn.");
+            }
+            firstFrame = false;
+            endTurn = DecideOption();
+            return;
         }
-        firstFrame = false;
 
+
+        Debug.Log("My turn: " + playerName);
+        ExecuteOption();
+        optionChoosen = Options.NONE;
         endTurn = true;
-       
+        firstFrame = true;
+        Debug.Log("A turn has passed: " + playerName);
+    }
+
+    void ExecuteOption()
+    {
+        defendingBonus = 1;
+        switch (optionChoosen)
+        {
+            case Options.ATTACK:
+                Attack(gameManager.basicAttackDamage);
+                break;
+            case Options.DEFENSE:
+                mana -= gameManager.manaSpentWithDefense;
+                defendingBonus = defendingBonus + ((float)gameManager.percentageDefense / 100f);
+                break;
+            case Options.SPECIAL_ATTACK:
+                mana -= gameManager.manaSpentWithSpecialAttack;
+                Debug.Log(playerName + " has " + mana + " of mana");
+                Attack(gameManager.manaAttackDamage);
+                break;
+            case Options.RECOVER_MANA:
+                RecoverMana();
+                break;
+            case Options.HEAL:
+                mana -= gameManager.manaSpentWithHealing;
+                Heal();
+                break;
+            case Options.INCREASE_STATS:
+                mana -= gameManager.manaSpentWithIncreasingStats;
+                ChangeStats(true, this);
+                levelOfChangeStats++;
+                break;
+            case Options.DECREASE_STATS:
+                mana -= gameManager.manaSpentWithDecreasingStats;
+                ChangeStats(false, enemy);
+                enemy.levelOfChangeStats--;
+                break;
+        }
+    }
+
+    bool DecideOption()
+    {
+        bool optionDecided = true;
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Attack(gameManager.basicAttackDamage);
+            optionChoosen = Options.ATTACK;
         }
         else if (Input.GetKeyDown(KeyCode.S) && mana >= gameManager.manaSpentWithSpecialAttack)
         {
-            mana -= gameManager.manaSpentWithSpecialAttack;
-            Debug.Log(playerName + " has " + mana + " of mana");
-            Attack(gameManager.manaAttackDamage);
+            optionChoosen = Options.SPECIAL_ATTACK;
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {
-            RecoverMana();
+            optionChoosen = Options.RECOVER_MANA;
         }
         else if (Input.GetKeyDown(KeyCode.M) && levelOfChangeStats < gameManager.maxOfTimesChangingLevelOfStats && mana >= gameManager.manaSpentWithIncreasingStats)
         {
-            mana -= gameManager.manaSpentWithIncreasingStats;
-            ChangeStats(true, this);
-            levelOfChangeStats++;
+            optionChoosen = Options.INCREASE_STATS;
         }
         else if (Input.GetKeyDown(KeyCode.L) && enemy.levelOfChangeStats > -gameManager.maxOfTimesChangingLevelOfStats && mana >= gameManager.manaSpentWithDecreasingStats)
         {
-            mana -= gameManager.manaSpentWithDecreasingStats;
-            ChangeStats(false, enemy);
-            enemy.levelOfChangeStats--;
+            optionChoosen = Options.DECREASE_STATS;
         }
-        else if (Input.GetKeyDown(KeyCode.H) && mana >= gameManager.manaSpentWithHealing) 
+        else if (Input.GetKeyDown(KeyCode.H) && mana >= gameManager.manaSpentWithHealing)
         {
-            mana -= gameManager.manaSpentWithHealing;
-            Heal();
+            optionChoosen = Options.HEAL;
+        }
+        else if (Input.GetKeyDown(KeyCode.D) && mana >= gameManager.manaSpentWithDefense)
+        {
+            optionChoosen = Options.DEFENSE;
         }
         else
         {
-            endTurn = false;
+            optionDecided = false;
         }
-        if (endTurn)
-        {
-            firstFrame = true;
-            Debug.Log("A turn has passed: " + playerName);
-        }
+        return optionDecided;
     }
 
     void Heal()
@@ -123,13 +183,14 @@ public class Player : MonoBehaviour
     }
     void Attack(int attackDamage)
     {
-        int damage = (attack - enemy.defense) * attackDamage;
-        enemy.TakeDamage(damage);
+        int damage = (attack - (int)(enemy.defense * enemy.defendingBonus)) * attackDamage;
+        enemy.TakeDamage(damage < 0 ? 0 : damage);
     }
 
     public void TakeDamage(int damage)
     {
         life -= damage;
+        life = life < 0 ? 0 : life;
         Debug.Log(playerName + "has a life of " + life);
         if (life <= 0)
         {
@@ -149,5 +210,7 @@ public class Player : MonoBehaviour
         endTurn = true;
         playerTurn = false;
         dead = false;
+        optionChoosen = Options.NONE;
+        defendingBonus = 1;
     }
 }
