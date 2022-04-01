@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class Player : MonoBehaviour
     public int initialDefense = 10;
     public int initialMana = 50;
     public GameManager gameManager = null;
+    public Slider lifeSlider = null;
+    public Slider manaSlider = null;
     int life;
     int speed;
     int attack;
@@ -80,10 +83,12 @@ public class Player : MonoBehaviour
                 break;
             case Options.DEFENSE:
                 mana -= gameManager.manaSpentWithDefense;
+                manaSlider.value = mana;
                 defendingBonus = defendingBonus + ((float)gameManager.percentageDefense / 100f);
                 break;
             case Options.SPECIAL_ATTACK:
                 mana -= gameManager.manaSpentWithSpecialAttack;
+                manaSlider.value = mana;
                 Debug.Log(playerName + " has " + mana + " of mana");
                 Attack(gameManager.manaAttackDamage);
                 break;
@@ -92,15 +97,18 @@ public class Player : MonoBehaviour
                 break;
             case Options.HEAL:
                 mana -= gameManager.manaSpentWithHealing;
+                manaSlider.value = mana;
                 Heal();
                 break;
             case Options.INCREASE_STATS:
                 mana -= gameManager.manaSpentWithIncreasingStats;
+                manaSlider.value = mana;
                 ChangeStats(true, this);
                 levelOfChangeStats++;
                 break;
             case Options.DECREASE_STATS:
                 mana -= gameManager.manaSpentWithDecreasingStats;
+                manaSlider.value = mana;
                 ChangeStats(false, enemy);
                 enemy.levelOfChangeStats--;
                 break;
@@ -154,6 +162,8 @@ public class Player : MonoBehaviour
         {
             life = initialLife;
         }
+        lifeSlider.value = life;
+
         Debug.Log(playerName + " has " + life + " of life");
     }
 
@@ -179,6 +189,7 @@ public class Player : MonoBehaviour
         {
             mana = initialMana;
         }
+        manaSlider.value = mana;
         Debug.Log(playerName + " has " + mana + " of mana");
     }
     void Attack(int attackDamage)
@@ -196,6 +207,7 @@ public class Player : MonoBehaviour
         {
             dead = true;
         }
+        lifeSlider.value = life;
     }
 
     public int getSpeed() { return speed; }
@@ -203,10 +215,12 @@ public class Player : MonoBehaviour
     public void Reset()
     {
         life = initialLife;
+        lifeSlider.value = life;
         attack = initialAttack;
         defense = initialDefense;
         speed = initialSpeed;
         mana = initialMana;
+        manaSlider.value = mana;
         endTurn = true;
         playerTurn = false;
         dead = false;
