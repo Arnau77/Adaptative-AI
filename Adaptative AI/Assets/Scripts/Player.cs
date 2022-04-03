@@ -59,19 +59,17 @@ public class Player : MonoBehaviour
         {
             if (firstFrame)
             {
-                Debug.Log(playerName + " please choose an option for this turn.");
+                gameManager.Log(playerName + " please choose an option for this turn.");
             }
             firstFrame = false;
             return;
         }
 
 
-        Debug.Log("My turn: " + playerName);
         ExecuteOption();
         optionChoosen = Options.NONE;
         endTurn = true;
         firstFrame = true;
-        Debug.Log("A turn has passed: " + playerName);
     }
 
     void ExecuteOption()
@@ -80,17 +78,19 @@ public class Player : MonoBehaviour
         switch (optionChoosen)
         {
             case Options.ATTACK:
+                gameManager.Log(playerName + " has attacked " + enemy.playerName);
                 Attack(gameManager.basicAttackDamage);
                 break;
             case Options.DEFENSE:
                 mana -= gameManager.manaSpentWithDefense;
                 manaSlider.value = mana;
                 defendingBonus = defendingBonus + ((float)gameManager.percentageDefense / 100f);
+                gameManager.Log(playerName + " is defending");
                 break;
             case Options.SPECIAL_ATTACK:
+                gameManager.Log(playerName + " has used a special attack against " + enemy.playerName);
                 mana -= gameManager.manaSpentWithSpecialAttack;
                 manaSlider.value = mana;
-                Debug.Log(playerName + " has " + mana + " of mana");
                 Attack(gameManager.manaAttackDamage);
                 break;
             case Options.RECOVER_MANA:
@@ -102,12 +102,14 @@ public class Player : MonoBehaviour
                 Heal();
                 break;
             case Options.INCREASE_STATS:
+                gameManager.Log(playerName + " has increased its stats");
                 mana -= gameManager.manaSpentWithIncreasingStats;
                 manaSlider.value = mana;
                 ChangeStats(true, this);
                 levelOfChangeStats++;
                 break;
             case Options.DECREASE_STATS:
+                gameManager.Log(playerName + " has decreased " + enemy.playerName + " stats");
                 mana -= gameManager.manaSpentWithDecreasingStats;
                 manaSlider.value = mana;
                 ChangeStats(false, enemy);
@@ -134,7 +136,7 @@ public class Player : MonoBehaviour
         }
         lifeSlider.value = life;
 
-        Debug.Log(playerName + " has " + life + " of life");
+        gameManager.Log(playerName + " has recovered life");
     }
 
     void ChangeStats(bool positiveChange, Player playerToAffect)
@@ -147,7 +149,6 @@ public class Player : MonoBehaviour
         playerToAffect.defense += (int)defenseChanged;
         float speedChanged = playerToAffect.initialSpeed * percentageInDecimals * multiplierOfLevel;
         playerToAffect.speed += (int)speedChanged;
-        Debug.Log(playerToAffect.playerName + "now has " + playerToAffect.attack + " of attack, " + playerToAffect.defense + " of defense and " + playerToAffect.speed + " of speed");
     }
 
     void RecoverMana()
@@ -160,7 +161,7 @@ public class Player : MonoBehaviour
             mana = initialMana;
         }
         manaSlider.value = mana;
-        Debug.Log(playerName + " has " + mana + " of mana");
+        gameManager.Log(playerName + " has recovered mana");
     }
     void Attack(int attackDamage)
     {
@@ -172,7 +173,6 @@ public class Player : MonoBehaviour
     {
         life -= damage;
         life = life < 0 ? 0 : life;
-        Debug.Log(playerName + "has a life of " + life);
         if (life <= 0)
         {
             dead = true;

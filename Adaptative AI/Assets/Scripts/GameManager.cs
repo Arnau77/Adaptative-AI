@@ -10,7 +10,10 @@ public class GameManager : MonoBehaviour
     public GameObject buttonsAndLog = null;
     public GameObject pauseMenu = null;
     public GameObject endMenu = null;
+    public GameObject buttons = null;
+    public GameObject logObject = null;
     public Text winnerText = null;
+    public Text logText = null;
     public int basicAttackDamage = 1;
     public int manaAttackDamage = 3;
     public int percentageRecoveryMana = 50;
@@ -25,11 +28,15 @@ public class GameManager : MonoBehaviour
     public int manaSpentWithDefense = 15;
     bool endGame = false;
     bool decidingOptions = true;
+    bool logging = false;
+    bool buttonsToActivate = false;
+    List<string> logsToPrint = new List<string>();
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        logsToPrint.Clear();
     }
 
     // Update is called once per frame
@@ -38,6 +45,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)){
             Pause(true);
             pauseMenu.SetActive(true);
+        }
+
+        if (logging)
+        {
+            return;
         }
 
         if (player1.endTurn && player2.endTurn)
@@ -80,9 +92,10 @@ public class GameManager : MonoBehaviour
     {
         if (decidingOptions)
         {
+            buttonsToActivate = true;
             return player1;
         }
-
+        buttonsToActivate = false;
         int speed1 = player1.getSpeed();
         int speed2 = player2.getSpeed();
         if (speed1 == speed2)
@@ -121,12 +134,47 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Log(string log)
+    {
+        if (log.Length == 0)
+        {
+            if (logsToPrint.Count == 0)
+            {
+                logObject.SetActive(false);
+                logging = false;
+                if (buttonsToActivate)
+                {
+                    buttons.SetActive(true);
+                }
+            }
+            else
+            {
+                logText.text = logsToPrint[0];
+                logsToPrint.RemoveAt(0);
+            }
+        }
+        else if (logging)
+        {
+            logsToPrint.Add(log);
+        }
+        else 
+        {
+            logObject.SetActive(true);
+            logging = true;
+            logText.text = log;
+            buttons.SetActive(false);
+        }
+    }
+
     public void Pause(bool pausing)
     {
         buttonsAndLog.SetActive(!pausing);
     }
     public void Restart()
     {
+        buttonsToActivate = false;
+        logging = false;
+        logsToPrint.Clear();
         player1.Reset();
         player2.Reset();
         endGame = false;
