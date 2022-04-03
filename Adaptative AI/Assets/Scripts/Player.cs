@@ -203,6 +203,7 @@ public class Player : MonoBehaviour
 
     public void Reset()
     {
+        firstFrame = true;
         life = initialLife;
         lifeSlider.value = life;
         attack = initialAttack;

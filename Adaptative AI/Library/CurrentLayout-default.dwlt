@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 342}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 138
+  controlID: 36
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 1
-  controlID: 49
+  controlID: 93
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 51
+  controlID: 95
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 50
+  controlID: 94
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -289,8 +289,8 @@ MonoBehaviour:
     y: 0
     width: 513
     height: 459
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -436,9 +436,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 888d0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8cdeffff5eefffff3af5ffffe0f8ffff3efbffffbc3900002a3a00003a3a0000
+      m_ExpandedIDs: 60c5ffff72c5ffff20c6fffffcc6ffff0ec7ffffbcc7ffff48c8ffff5ac8ffff08c9ffff34caffff46cafffff4caffff86cbffff98cbffff46ccffffd4ccffffe6ccffff94cdffffc0ceffffd2ceffff80cfffff5cd0ffff6ed0ffff1cd1fffffed1ffff10d2ffffbed2ffff9ad3ffffacd3ffff5ad4ffff3cd5ffff4ed5fffffcd5ffffdad6ffffecd6ffff9ad7ffff76d8ffff88d8ffff36d9ffff12daffff24daffffd2daffffaedbffffc0dbffff6edcffff4addffff5cddffff0adeffff9edfffffb0dfffff5ee0ffff0ee3ffff20e3ffffcee3ffff5ae4ffff6ce4ffff1ae5fffface5ffffbee5ffff6ce6ffffe8e7fffffae7ffffa8e8ffff36ebffff48ebfffffaebffffe2f9fffff4f9ffffa2faffff5efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -499,7 +499,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 148
+  m_LastVerticalScrollValue: 0
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -539,20 +539,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Documentos\GitHub\Adaptative-AI\Adaptative AI
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a03c0000
-    m_LastClickedID: 15520
-    m_ExpandedIDs: 000000009a3c000000ca9a3b
+    m_SelectedIDs: e83c0000
+    m_LastClickedID: 15592
+    m_ExpandedIDs: 00000000de3c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -580,7 +580,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a3c0000
+    m_ExpandedIDs: 00000000de3c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -611,15 +611,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 447dffffbe38000090b3feffc44b0000563b0000c2400000863b0000823b0000f25e0000c8730000188e0000d27300002a9300008a39000082390000847700005467000046670000f066000062670000dead000080ae0000cead0000eead00001a770000eaae00000a4900000c790000aed60000a6780000523b0000c6430000985e00006a64000022700000763d0000c06c0000c6880000f86100005a490000664900006a49000062490000684900004855000088750000ba7700009c730000ae77000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: SpecialAttackFeedback
-      m_OriginalName: SpecialAttackFeedback
+      m_Name: GameManager
+      m_OriginalName: GameManager
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 33194
+      m_UserData: 12440
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -751,7 +751,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1920
     y: 73
-    width: 805
+    width: 799
     height: 436
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0

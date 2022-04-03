@@ -7,13 +7,16 @@ public class AttackFeedback : MonoBehaviour
     public float secondsToLive;
     System.DateTime lifetime;
     bool embiggening = true;
+    Vector2 multiplier;
 
     // Start is called before the first frame update
     void Start()
     {
         Vector3 newPos = gameObject.transform.position;
+        multiplier.x = Screen.fullScreen ? 5f : Screen.width / 750;
+        multiplier.y = Screen.fullScreen ? 5f : Screen.height / 400;
         newPos.y += 0.5f;
-        newPos.x += 0.5f;
+        newPos.x += Screen.fullScreen ? -1.5f : 0.5f;
         gameObject.transform.position = newPos;
         lifetime = System.DateTime.Now.AddSeconds(secondsToLive);
     }
@@ -37,24 +40,24 @@ public class AttackFeedback : MonoBehaviour
         Vector3 newScale = gameObject.transform.localScale;
         if (embiggening)
         {
-            newScale.x += 0.01f;
-            newScale.y += 0.01f;
+            newScale.x += 0.01f * multiplier.x;
+            newScale.y += 0.01f * multiplier.y;
         }
         else
         {
-            newScale.x -= 0.001f;
-            newScale.y -= 0.001f;
+            newScale.x -= 0.001f * multiplier.x;
+            newScale.y -= 0.001f * multiplier.y;
         }
         Vector3 newPos = gameObject.transform.position;
         if (embiggening)
         {
-            newPos.x += 0.06f;
-            newPos.y += 0.005f;
+            newPos.x += 0.06f * multiplier.x;
+            newPos.y += 0.005f * multiplier.y;
         }
         else
         {
-            newPos.x -= 0.006f;
-            newPos.y -= 0.0005f;
+            newPos.x -= 0.006f * multiplier.x;
+            newPos.y -= 0.0005f * multiplier.y;
         }
         gameObject.transform.localScale = newScale;
         gameObject.transform.position = newPos;

@@ -52,6 +52,22 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        if (player1.dead)
+        {
+            winnerText.text = player2.playerName + " has won the game";
+            endGame = true;
+        }
+        else if (player2.dead)
+        {
+            winnerText.text = player1.playerName + " has won the game";
+            endGame = true;
+        }
+        if (endGame)
+        {
+            endMenu.SetActive(true);
+            buttonsAndLog.SetActive(false);
+            return;
+        }
         if (player1.endTurn && player2.endTurn)
         {
             player1.playerTurn = false;
@@ -71,21 +87,8 @@ public class GameManager : MonoBehaviour
             player2.playerTurn = false;
             player1.playerTurn = true;
         }
-        if (player1.dead)
-        {
-            winnerText.text = player2.playerName + " has won the game";
-            endGame = true;
-        }
-        else if(player2.dead)
-        {
-            winnerText.text = player1.playerName + " has won the game";
-            endGame = true;
-        }
-        if (endGame)
-        {
-            endMenu.SetActive(true);
-            buttonsAndLog.SetActive(false);
-        }
+        
+        
     }
 
     Player DecideFastestPlayer(bool decidingOptions)

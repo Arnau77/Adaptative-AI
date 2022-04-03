@@ -8,6 +8,7 @@ public class SpecialAttackFeedback : MonoBehaviour
     public float secondsToLive;
     System.DateTime lifetime;
     bool goToRight = true;
+    float multiplier;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class SpecialAttackFeedback : MonoBehaviour
         {
             goToRight = false;
         }
+        multiplier = Screen.fullScreen ? 7f : Screen.width / 750;
         Vector3 newPos = gameObject.transform.position;
         gameObject.transform.position = newPos;
         lifetime = System.DateTime.Now.AddSeconds(secondsToLive);
@@ -32,7 +34,7 @@ public class SpecialAttackFeedback : MonoBehaviour
         }
 
         Vector3 newPos = gameObject.transform.position;
-        newPos.x += goToRight? 0.05f : -0.05f;
+        newPos.x += goToRight? (0.05f*multiplier) : (-0.05f*multiplier);
         gameObject.transform.position = newPos;
     }
 }
