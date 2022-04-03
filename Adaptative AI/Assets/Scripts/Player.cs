@@ -36,6 +36,9 @@ public class Player : MonoBehaviour
     public GameObject increasePrefab = null;
     public GameObject healPrefab = null;
     public GameObject manaPrefab = null;
+    public GameObject defensePrefab = null;
+    public GameObject attackPrefab = null;
+    public GameObject specialAttackPrefab = null;
     public Vector3 position;
     int life;
     int speed;
@@ -83,16 +86,19 @@ public class Player : MonoBehaviour
         switch (optionChoosen)
         {
             case Options.ATTACK:
+                Instantiate(attackPrefab, enemy.position, Quaternion.identity, enemy.gameObject.transform);
                 gameManager.Log(playerName + " has attacked " + enemy.playerName);
                 Attack(gameManager.basicAttackDamage);
                 break;
             case Options.DEFENSE:
+                Instantiate(defensePrefab, position, Quaternion.identity, gameObject.transform);
                 mana -= gameManager.manaSpentWithDefense;
                 manaSlider.value = mana;
                 defendingBonus = defendingBonus + ((float)gameManager.percentageDefense / 100f);
                 gameManager.Log(playerName + " is defending");
                 break;
             case Options.SPECIAL_ATTACK:
+                Instantiate(specialAttackPrefab, position, Quaternion.identity, gameObject.transform);
                 gameManager.Log(playerName + " has used a special attack against " + enemy.playerName);
                 mana -= gameManager.manaSpentWithSpecialAttack;
                 manaSlider.value = mana;
@@ -122,7 +128,7 @@ public class Player : MonoBehaviour
                 manaSlider.value = mana;
                 ChangeStats(false, enemy);
                 enemy.levelOfChangeStats--;
-                Instantiate(decreasePrefab, enemy.position,Quaternion.identity, gameObject.transform);
+                Instantiate(decreasePrefab, enemy.position,Quaternion.identity, enemy.gameObject.transform);
                 break;
         }
     }

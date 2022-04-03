@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 241002257}
   - component: {fileID: 241002258}
   m_Layer: 0
-  m_Name: backPlayerSprite
+  m_Name: Player1Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -953,10 +953,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241002256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 333.9, y: -34.399998, z: -3711.8013}
+  m_LocalPosition: {x: 280.07, y: 10.1, z: -3711.8013}
   m_LocalScale: {x: 103.93545, y: 109.1215, z: 99.855804}
   m_Children: []
-  m_Father: {fileID: 799977059}
+  m_Father: {fileID: 712127972}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &241002258
@@ -998,7 +998,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e0dddf90f609fed48b1d64728e62d99c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d3ade1f1db345649ac863a45d373976, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3119,6 +3119,12 @@ MonoBehaviour:
     type: 3}
   manaPrefab: {fileID: 5448961512299548376, guid: 3e4704ff1bf5758499f25768d0047946,
     type: 3}
+  defensePrefab: {fileID: 8621655479745811248, guid: 476f0bf1adb55904b8added0accd2c69,
+    type: 3}
+  attackPrefab: {fileID: 8900465496678795679, guid: 855779fb7d3c8cf4a9a4f3424d4e565d,
+    type: 3}
+  specialAttackPrefab: {fileID: 380957289830320481, guid: 0b8d92ed5e5ed854b8d39eecb4e45851,
+    type: 3}
   position: {x: 12.5, y: 0.5, z: 90}
 --- !u!224 &712127972
 RectTransform:
@@ -3135,7 +3141,7 @@ RectTransform:
   - {fileID: 1384152285}
   - {fileID: 480281309}
   - {fileID: 1186715106}
-  - {fileID: 1838568445}
+  - {fileID: 241002257}
   m_Father: {fileID: 379746817}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3262,7 +3268,7 @@ RectTransform:
   - {fileID: 1468276232}
   - {fileID: 711777208}
   - {fileID: 382382366}
-  - {fileID: 241002257}
+  - {fileID: 1838568445}
   m_Father: {fileID: 379746817}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3305,6 +3311,12 @@ MonoBehaviour:
   healPrefab: {fileID: 1994567180907953437, guid: 431090e84b8c9f24cbf8b1f49b1bee89,
     type: 3}
   manaPrefab: {fileID: 5448961512299548376, guid: 3e4704ff1bf5758499f25768d0047946,
+    type: 3}
+  defensePrefab: {fileID: 8621655479745811248, guid: 476f0bf1adb55904b8added0accd2c69,
+    type: 3}
+  attackPrefab: {fileID: 8900465496678795679, guid: 855779fb7d3c8cf4a9a4f3424d4e565d,
+    type: 3}
+  specialAttackPrefab: {fileID: 380957289830320481, guid: 0b8d92ed5e5ed854b8d39eecb4e45851,
     type: 3}
   position: {x: 0, y: 0.5, z: 90}
 --- !u!1 &816106490
@@ -6893,7 +6905,7 @@ GameObject:
   - component: {fileID: 1838568445}
   - component: {fileID: 1838568446}
   m_Layer: 0
-  m_Name: frontPlayerSprite
+  m_Name: Player2Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6907,10 +6919,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838568444}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -197.99998, y: -19, z: -3711.8013}
+  m_LocalPosition: {x: -217.99998, y: 1, z: -3711.8013}
   m_LocalScale: {x: 108.20269, y: 108.20269, z: 108.20269}
   m_Children: []
-  m_Father: {fileID: 712127972}
+  m_Father: {fileID: 799977059}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1838568446
