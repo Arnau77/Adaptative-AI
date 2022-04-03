@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    enum Options
+    public enum Options
     {
         NONE = 0,
         ATTACK,
@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
     public GameManager gameManager = null;
     public Slider lifeSlider = null;
     public Slider manaSlider = null;
+    public Text lifeinitialValueText = null;
+    public Text manainitialValueText = null;
     int life;
     int speed;
     int attack;
@@ -50,7 +52,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!playerTurn)
+        if (!playerTurn || endTurn)
             return;
 
         if (optionChoosen == Options.NONE)
@@ -60,7 +62,6 @@ public class Player : MonoBehaviour
                 Debug.Log(playerName + " please choose an option for this turn.");
             }
             firstFrame = false;
-            endTurn = DecideOption();
             return;
         }
 
@@ -115,42 +116,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    bool DecideOption()
+
+    public void DecideOption(Options option)
     {
-        bool optionDecided = true;
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            optionChoosen = Options.ATTACK;
-        }
-        else if (Input.GetKeyDown(KeyCode.S) && mana >= gameManager.manaSpentWithSpecialAttack)
-        {
-            optionChoosen = Options.SPECIAL_ATTACK;
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            optionChoosen = Options.RECOVER_MANA;
-        }
-        else if (Input.GetKeyDown(KeyCode.M) && levelOfChangeStats < gameManager.maxOfTimesChangingLevelOfStats && mana >= gameManager.manaSpentWithIncreasingStats)
-        {
-            optionChoosen = Options.INCREASE_STATS;
-        }
-        else if (Input.GetKeyDown(KeyCode.L) && enemy.levelOfChangeStats > -gameManager.maxOfTimesChangingLevelOfStats && mana >= gameManager.manaSpentWithDecreasingStats)
-        {
-            optionChoosen = Options.DECREASE_STATS;
-        }
-        else if (Input.GetKeyDown(KeyCode.H) && mana >= gameManager.manaSpentWithHealing)
-        {
-            optionChoosen = Options.HEAL;
-        }
-        else if (Input.GetKeyDown(KeyCode.D) && mana >= gameManager.manaSpentWithDefense)
-        {
-            optionChoosen = Options.DEFENSE;
-        }
-        else
-        {
-            optionDecided = false;
-        }
-        return optionDecided;
+        optionChoosen = option;
+        endTurn = true;
     }
 
     void Heal()
@@ -212,6 +182,10 @@ public class Player : MonoBehaviour
 
     public int getSpeed() { return speed; }
 
+    public int getMana() { return mana; }
+
+    public int getLevelOfChangeStats() { return levelOfChangeStats; }
+
     public void Reset()
     {
         life = initialLife;
@@ -226,5 +200,7 @@ public class Player : MonoBehaviour
         dead = false;
         optionChoosen = Options.NONE;
         defendingBonus = 1;
+        lifeinitialValueText.text = initialLife.ToString();
+        manainitialValueText.text = initialMana.ToString();
     }
 }

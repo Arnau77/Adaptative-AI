@@ -8,6 +8,7 @@ public class SliderColorChange : MonoBehaviour
 
     public Slider slider = null;
     public Image sliderImage = null;
+    public Text valueText = null;
     public Color colorWhenFull;
     public Color colorWhenMedium;
     public Color colorWhenLow;
@@ -24,6 +25,7 @@ public class SliderColorChange : MonoBehaviour
     // Update is called once per frame
     public void OnValueChanged()
     {
+        valueText.text = slider.value.ToString();
         if (slider.value == 0)
         {
             sliderImage.color = colorWhenDepleted;

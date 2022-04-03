@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public Player player1 = null;
     public Player player2 = null;
+    public GameObject buttonsAndLog = null;
+    public GameObject pauseMenu = null;
+    public GameObject endMenu = null;
+    public Text winnerText = null;
     public int basicAttackDamage = 1;
     public int manaAttackDamage = 3;
     public int percentageRecoveryMana = 50;
@@ -20,6 +25,7 @@ public class GameManager : MonoBehaviour
     public int manaSpentWithDefense = 15;
     bool endGame = false;
     bool decidingOptions = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +35,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            Pause(true);
+            pauseMenu.SetActive(true);
+        }
+
         if (player1.endTurn && player2.endTurn)
         {
             player1.playerTurn = false;
@@ -50,20 +61,18 @@ public class GameManager : MonoBehaviour
         }
         if (player1.dead)
         {
-            Debug.LogWarning(player2.playerName + " has won the game");
+            winnerText.text = player2.playerName + " has won the game";
             endGame = true;
         }
         else if(player2.dead)
         {
-            Debug.LogWarning(player1.playerName + " has won the game");
+            winnerText.text = player1.playerName + " has won the game";
             endGame = true;
         }
         if (endGame)
         {
-            endGame = false;
-            Debug.LogWarning("Game has reset");
-            player1.Reset();
-            player2.Reset();
+            endMenu.SetActive(true);
+            buttonsAndLog.SetActive(false);
         }
     }
 
@@ -96,4 +105,37 @@ public class GameManager : MonoBehaviour
             return player2;
         }
     }
+
+    public void OptionSelected(int optionChosen)
+    {
+        if (decidingOptions)
+            return;
+        Player.Options option = (Player.Options)optionChosen;
+        if (player1.playerTurn)
+        {
+            player1.DecideOption(option);
+        }
+        else if (player2.playerTurn)
+        {
+            player2.DecideOption(option);
+        }
+    }
+
+    public void Pause(bool pausing)
+    {
+        buttonsAndLog.SetActive(!pausing);
+    }
+    public void Restart()
+    {
+        player1.Reset();
+        player2.Reset();
+        endGame = false;
+        decidingOptions = true;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
 }
