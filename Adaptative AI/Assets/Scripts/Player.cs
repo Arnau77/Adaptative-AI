@@ -32,6 +32,11 @@ public class Player : MonoBehaviour
     public Slider manaSlider = null;
     public Text lifeinitialValueText = null;
     public Text manainitialValueText = null;
+    public GameObject decreasePrefab = null;
+    public GameObject increasePrefab = null;
+    public GameObject healPrefab = null;
+    public GameObject manaPrefab = null;
+    public Vector3 position;
     int life;
     int speed;
     int attack;
@@ -94,9 +99,11 @@ public class Player : MonoBehaviour
                 Attack(gameManager.manaAttackDamage);
                 break;
             case Options.RECOVER_MANA:
+                Instantiate(manaPrefab, position, Quaternion.identity, gameObject.transform);
                 RecoverMana();
                 break;
             case Options.HEAL:
+                Instantiate(healPrefab, position, Quaternion.identity, gameObject.transform);
                 mana -= gameManager.manaSpentWithHealing;
                 manaSlider.value = mana;
                 Heal();
@@ -107,6 +114,7 @@ public class Player : MonoBehaviour
                 manaSlider.value = mana;
                 ChangeStats(true, this);
                 levelOfChangeStats++;
+                Instantiate(increasePrefab, position, Quaternion.identity, gameObject.transform);
                 break;
             case Options.DECREASE_STATS:
                 gameManager.Log(playerName + " has decreased " + enemy.playerName + " stats");
@@ -114,6 +122,7 @@ public class Player : MonoBehaviour
                 manaSlider.value = mana;
                 ChangeStats(false, enemy);
                 enemy.levelOfChangeStats--;
+                Instantiate(decreasePrefab, enemy.position,Quaternion.identity, gameObject.transform);
                 break;
         }
     }

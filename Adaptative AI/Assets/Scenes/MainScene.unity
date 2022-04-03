@@ -3111,6 +3111,15 @@ MonoBehaviour:
   manaSlider: {fileID: 63075976}
   lifeinitialValueText: {fileID: 345514742}
   manainitialValueText: {fileID: 1975806840}
+  decreasePrefab: {fileID: 578736367315375670, guid: 9015201b7abbb0a4e9a572b2da29ea1d,
+    type: 3}
+  increasePrefab: {fileID: 15983432167910191, guid: 0a49ea6cca2b71c45bd3a3eff0da4b3f,
+    type: 3}
+  healPrefab: {fileID: 1994567180907953437, guid: 431090e84b8c9f24cbf8b1f49b1bee89,
+    type: 3}
+  manaPrefab: {fileID: 5448961512299548376, guid: 3e4704ff1bf5758499f25768d0047946,
+    type: 3}
+  position: {x: 12.5, y: 0.5, z: 90}
 --- !u!224 &712127972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3289,6 +3298,15 @@ MonoBehaviour:
   manaSlider: {fileID: 2044426406}
   lifeinitialValueText: {fileID: 1362942091}
   manainitialValueText: {fileID: 341717760}
+  decreasePrefab: {fileID: 578736367315375670, guid: 9015201b7abbb0a4e9a572b2da29ea1d,
+    type: 3}
+  increasePrefab: {fileID: 15983432167910191, guid: 0a49ea6cca2b71c45bd3a3eff0da4b3f,
+    type: 3}
+  healPrefab: {fileID: 1994567180907953437, guid: 431090e84b8c9f24cbf8b1f49b1bee89,
+    type: 3}
+  manaPrefab: {fileID: 5448961512299548376, guid: 3e4704ff1bf5758499f25768d0047946,
+    type: 3}
+  position: {x: 0, y: 0.5, z: 90}
 --- !u!1 &816106490
 GameObject:
   m_ObjectHideFlags: 0
