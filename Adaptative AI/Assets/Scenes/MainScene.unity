@@ -891,6 +891,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2085772972}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &224983391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,6 +1326,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2085772972}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &321947317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1709,6 +1731,17 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1687043840}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2085772972}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3126,6 +3159,7 @@ MonoBehaviour:
   specialAttackPrefab: {fileID: 380957289830320481, guid: 0b8d92ed5e5ed854b8d39eecb4e45851,
     type: 3}
   position: {x: 12.5, y: 0.5, z: 90}
+  componentAI: {fileID: 0}
 --- !u!224 &712127972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3246,6 +3280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 799977059}
   - component: {fileID: 799977060}
+  - component: {fileID: 799977061}
   m_Layer: 5
   m_Name: Player2
   m_TagString: Untagged
@@ -3319,6 +3354,21 @@ MonoBehaviour:
   specialAttackPrefab: {fileID: 380957289830320481, guid: 0b8d92ed5e5ed854b8d39eecb4e45851,
     type: 3}
   position: {x: 0, y: 0.5, z: 90}
+  componentAI: {fileID: 799977061}
+--- !u!114 &799977061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799977058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d8a913cbaace94bba619464b989f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 799977060}
+  gameManager: {fileID: 1155606228}
 --- !u!1 &816106490
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,6 +4125,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2085772972}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &983750657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4536,15 +4597,15 @@ MonoBehaviour:
   logText: {fileID: 91785588}
   basicAttackDamage: 1
   manaAttackDamage: 3
-  percentageRecoveryMana: 50
+  percentageRecoveryMana: 70
   percentageDefense: 50
   maxOfTimesChangingLevelOfStats: 3
   percentageChangingStats: 10
   percentageHealing: 50
   manaSpentWithSpecialAttack: 20
-  manaSpentWithIncreasingStats: 10
-  manaSpentWithDecreasingStats: 10
-  manaSpentWithHealing: 25
+  manaSpentWithIncreasingStats: 5
+  manaSpentWithDecreasingStats: 5
+  manaSpentWithHealing: 30
   manaSpentWithDefense: 15
 --- !u!4 &1155606229
 Transform:
@@ -4995,6 +5056,17 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1687043840}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2085772972}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -6471,6 +6543,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2085772972}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1698362924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7467,6 +7550,17 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1687043840}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2085772972}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:

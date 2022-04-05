@@ -16,15 +16,15 @@ public class GameManager : MonoBehaviour
     public Text logText = null;
     public int basicAttackDamage = 1;
     public int manaAttackDamage = 3;
-    public int percentageRecoveryMana = 50;
+    public int percentageRecoveryMana = 70;
     public int percentageDefense = 50;
     public int maxOfTimesChangingLevelOfStats = 3;
     public int percentageChangingStats = 10;
     public int percentageHealing = 50;
     public int manaSpentWithSpecialAttack = 20;
-    public int manaSpentWithIncreasingStats = 10;
-    public int manaSpentWithDecreasingStats = 10;
-    public int manaSpentWithHealing = 25;
+    public int manaSpentWithIncreasingStats = 5;
+    public int manaSpentWithDecreasingStats = 5;
+    public int manaSpentWithHealing = 30;
     public int manaSpentWithDefense = 15;
     bool endGame = false;
     bool decidingOptions = true;
@@ -98,7 +98,6 @@ public class GameManager : MonoBehaviour
             buttonsToActivate = true;
             return player1;
         }
-        buttonsToActivate = false;
         int speed1 = player1.getSpeed();
         int speed2 = player2.getSpeed();
         if (speed1 == speed2)
@@ -148,6 +147,7 @@ public class GameManager : MonoBehaviour
                 if (buttonsToActivate)
                 {
                     buttons.SetActive(true);
+                    buttonsToActivate = false;
                 }
             }
             else

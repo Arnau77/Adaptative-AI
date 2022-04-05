@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     public GameObject attackPrefab = null;
     public GameObject specialAttackPrefab = null;
     public Vector3 position;
+    public AI componentAI = null;
     int life;
     int speed;
     int attack;
@@ -65,9 +66,13 @@ public class Player : MonoBehaviour
 
         if (optionChoosen == Options.NONE)
         {
-            if (firstFrame)
+            if (firstFrame && componentAI == null)
             {
                 gameManager.Log(playerName + " please choose an option for this turn.");
+            }
+            else if (firstFrame)
+            {
+                componentAI.ChooseOption();
             }
             firstFrame = false;
             return;
@@ -197,6 +202,8 @@ public class Player : MonoBehaviour
 
     public int getSpeed() { return speed; }
 
+    public int getLife() { return life; }
+
     public int getMana() { return mana; }
 
     public int getLevelOfChangeStats() { return levelOfChangeStats; }
@@ -216,6 +223,7 @@ public class Player : MonoBehaviour
         dead = false;
         optionChoosen = Options.NONE;
         defendingBonus = 1;
+        levelOfChangeStats = 0;
         lifeinitialValueText.text = initialLife.ToString();
         manainitialValueText.text = initialMana.ToString();
     }
