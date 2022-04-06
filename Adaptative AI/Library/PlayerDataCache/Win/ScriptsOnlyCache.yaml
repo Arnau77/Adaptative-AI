@@ -6,8 +6,8 @@ ScriptsOnlyBuild:
     - GameManager
     - HealDefenseAndManaFeedback
     - IncreaseOrDecreaseFeedback
+    - OnlyAttackAI
     - Player
-    - SimpleAI
     - SliderColorChange
     - SpecialAttackFeedback
     Unity.2D.Animation.Editor.dll:
@@ -58,8 +58,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11608}
     - Class: 114
-      Script: {instanceID: 11868}
-    - Class: 114
       Script: {instanceID: 12270}
     - Class: 114
       Script: {instanceID: 12278}
@@ -70,21 +68,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12984}
     - Class: 114
-      Script: {instanceID: 13508}
+      Script: {instanceID: 13428}
     - Class: 114
-      Script: {instanceID: 13514}
+      Script: {instanceID: 13510}
     - Class: 114
-      Script: {instanceID: 13750}
+      Script: {instanceID: 13516}
     - Class: 114
-      Script: {instanceID: 13914}
+      Script: {instanceID: 13752}
     - Class: 114
-      Script: {instanceID: 14338}
+      Script: {instanceID: 13916}
     - Class: 114
-      Script: {instanceID: 14366}
+      Script: {instanceID: 14340}
     - Class: 114
-      Script: {instanceID: 14408}
+      Script: {instanceID: 14368}
     - Class: 114
-      Script: {instanceID: 14428}
+      Script: {instanceID: 14410}
+    - Class: 114
+      Script: {instanceID: 14430}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -478,6 +478,12 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: e5c09eee9593c41922324e29c0a2e768
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OnlyAttackAI
+  - hash:
+      serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -647,5 +653,5 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainScene.unity
-  playerPath: D:/Documentos/GitHub/Adaptative-AI/Adaptative AI/Release/Adaptative
+  playerPath: D:/Documentos/GitHub/Adaptative-AI/Adaptative AI/Release/AdaptativeAI/Adaptative
     AI.exe
