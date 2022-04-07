@@ -2,11 +2,11 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AttackFeedback
+    - AttackWithRecoveringManaAI
     - Button
     - GameManager
     - HealDefenseAndManaFeedback
     - IncreaseOrDecreaseFeedback
-    - OnlyAttackAI
     - Player
     - SliderColorChange
     - SpecialAttackFeedback
@@ -64,27 +64,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12444}
     - Class: 114
-      Script: {instanceID: 12732}
+      Script: {instanceID: 12462}
     - Class: 114
-      Script: {instanceID: 12984}
+      Script: {instanceID: 12734}
     - Class: 114
-      Script: {instanceID: 13428}
+      Script: {instanceID: 12986}
     - Class: 114
-      Script: {instanceID: 13510}
+      Script: {instanceID: 13512}
     - Class: 114
-      Script: {instanceID: 13516}
+      Script: {instanceID: 13518}
     - Class: 114
-      Script: {instanceID: 13752}
+      Script: {instanceID: 13754}
     - Class: 114
-      Script: {instanceID: 13916}
+      Script: {instanceID: 13918}
     - Class: 114
-      Script: {instanceID: 14340}
+      Script: {instanceID: 14342}
     - Class: 114
-      Script: {instanceID: 14368}
+      Script: {instanceID: 14370}
     - Class: 114
-      Script: {instanceID: 14410}
+      Script: {instanceID: 14412}
     - Class: 114
-      Script: {instanceID: 14430}
+      Script: {instanceID: 14432}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -362,6 +362,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
+  - hash:
+      serializedVersion: 2
+      Hash: ed78f75a2885549d51b166d45c875fa4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AttackWithRecoveringManaAI
   - hash:
       serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
