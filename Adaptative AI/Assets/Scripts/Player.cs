@@ -208,6 +208,8 @@ public class Player : MonoBehaviour
 
     public int getLevelOfChangeStats() { return levelOfChangeStats; }
 
+    public float getDefendingBonus() { return defendingBonus; }
+
     public void Reset()
     {
         firstFrame = true;
