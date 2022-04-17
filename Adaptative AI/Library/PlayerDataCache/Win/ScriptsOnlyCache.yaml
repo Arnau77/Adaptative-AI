@@ -1,8 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - AttackAndHealAI
     - AttackFeedback
+    - AttackHealAndDefenseAI
     - Button
     - GameManager
     - HealDefenseAndManaFeedback
@@ -54,8 +54,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11264}
     - Class: 114
-      Script: {instanceID: 11374}
-    - Class: 114
       Script: {instanceID: 11554}
     - Class: 114
       Script: {instanceID: 11610}
@@ -70,21 +68,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12988}
     - Class: 114
-      Script: {instanceID: 13514}
+      Script: {instanceID: 12990}
     - Class: 114
-      Script: {instanceID: 13520}
+      Script: {instanceID: 13516}
     - Class: 114
-      Script: {instanceID: 13756}
+      Script: {instanceID: 13522}
     - Class: 114
-      Script: {instanceID: 13920}
+      Script: {instanceID: 13758}
     - Class: 114
-      Script: {instanceID: 14344}
+      Script: {instanceID: 13922}
     - Class: 114
-      Script: {instanceID: 14372}
+      Script: {instanceID: 14346}
     - Class: 114
-      Script: {instanceID: 14414}
+      Script: {instanceID: 14374}
     - Class: 114
-      Script: {instanceID: 14434}
+      Script: {instanceID: 14416}
+    - Class: 114
+      Script: {instanceID: 14436}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -422,6 +422,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: d716c36e7c3eb56b07c8d9412c632750
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AttackHealAndDefenseAI
   - hash:
       serializedVersion: 2
       Hash: f84d945e5e1ca985698660fc26e9657f
