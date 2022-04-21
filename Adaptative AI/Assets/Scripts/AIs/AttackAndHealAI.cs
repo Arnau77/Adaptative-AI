@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackAndHealAI : AI
 {
     public int maxLifeToFocusOnAttack = 25;
-    public int maxLifeToHeal = 25;
+    public int maxLifeToHeal = 30;
     public int maxLifeToAttackInsteadOfHeal = 10;
 
     // Start is called before the first frame update
