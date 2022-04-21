@@ -54,12 +54,12 @@ public class GameManager : MonoBehaviour
 
         if (player1.dead)
         {
-            winnerText.text = player2.playerName + " has won the game";
+            winnerText.text = player2.playerName + " has won";
             endGame = true;
         }
         else if (player2.dead)
         {
-            winnerText.text = player1.playerName + " has won the game";
+            winnerText.text = player1.playerName + " has won";
             endGame = true;
         }
         if (endGame)
