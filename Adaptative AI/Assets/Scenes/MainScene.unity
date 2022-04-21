@@ -3364,7 +3364,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 799977058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b8c6a8f2f41824b8ca9ace48e09230, type: 3}
+  m_Script: {fileID: 11500000, guid: 09388cb74706d79459125d71f2c3ad6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 799977060}
@@ -3372,6 +3372,8 @@ MonoBehaviour:
   maxLifeToFocusOnAttack: 25
   maxLifeToHeal: 25
   maxLifeToAttackInsteadOfHeal: 10
+  levelOfStatToStartIncresingStats: -2
+  levelOfStatToStartDecreasingStats: 2
 --- !u!1 &816106490
 GameObject:
   m_ObjectHideFlags: 0
