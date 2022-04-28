@@ -54,11 +54,15 @@ public class GameManager : MonoBehaviour
 
         if (player1.dead)
         {
+            player1.MatchEnded(false);
+            player2.MatchEnded(true);
             winnerText.text = player2.playerName + " has won";
             endGame = true;
         }
         else if (player2.dead)
         {
+            player1.MatchEnded(true);
+            player2.MatchEnded(false);
             winnerText.text = player1.playerName + " has won";
             endGame = true;
         }

@@ -3280,7 +3280,10 @@ GameObject:
   m_Component:
   - component: {fileID: 799977059}
   - component: {fileID: 799977060}
+  - component: {fileID: 799977062}
   - component: {fileID: 799977061}
+  - component: {fileID: 799977064}
+  - component: {fileID: 799977063}
   m_Layer: 5
   m_Name: Player2
   m_TagString: Untagged
@@ -3354,7 +3357,7 @@ MonoBehaviour:
   specialAttackPrefab: {fileID: 380957289830320481, guid: 0b8d92ed5e5ed854b8d39eecb4e45851,
     type: 3}
   position: {x: 0, y: 0.5, z: 90}
-  componentAI: {fileID: 799977061}
+  componentAI: {fileID: 799977063}
 --- !u!114 &799977061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3364,16 +3367,75 @@ MonoBehaviour:
   m_GameObject: {fileID: 799977058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b8c6a8f2f41824b8ca9ace48e09230, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a578650b936085428a382450c14f722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+  aiAgent: {fileID: 799977063}
+--- !u!114 &799977062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799977058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 8
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 0
+      BranchSizes: 07000000
+    VectorActionSize: 07000000
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 0
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: AI
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_ObservableAttributeHandling: 0
+--- !u!114 &799977063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799977058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55630a5de7e59e449a7c5a93541f733b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 799977060}
   gameManager: {fileID: 1155606228}
-  maxLifeToFocusOnAttack: 25
-  maxLifeToHeal: 30
-  maxLifeToAttackInsteadOfHeal: 10
-  levelOfStatToStartIncresingStats: -2
-  levelOfStatToStartDecreasingStats: 2
+  aiTurn: 0
+  victory: 0
+  matchEnded: 0
+--- !u!114 &799977064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799977058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  TakeActionsBetweenDecisions: 1
 --- !u!1 &816106490
 GameObject:
   m_ObjectHideFlags: 0

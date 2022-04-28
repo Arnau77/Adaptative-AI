@@ -24,6 +24,11 @@ public class AI : MonoBehaviour
 
     }
 
+    virtual public void MatchEnded(bool victory)
+    {
+
+    }
+
     protected bool CheckIfOptionIsValid(Player.Options optionChosen)
     {
         switch (optionChosen)

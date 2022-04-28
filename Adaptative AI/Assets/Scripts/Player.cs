@@ -85,6 +85,14 @@ public class Player : MonoBehaviour
         firstFrame = true;
     }
 
+    public void MatchEnded(bool victory)
+    {
+        if (componentAI != null)
+        {
+            componentAI.MatchEnded(victory);
+        }
+    }
+
     void ExecuteOption()
     {
         defendingBonus = 1;
