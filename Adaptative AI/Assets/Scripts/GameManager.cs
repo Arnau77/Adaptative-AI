@@ -186,6 +186,12 @@ public class GameManager : MonoBehaviour
         player2.Reset();
         endGame = false;
         decidingOptions = true;
+        Pause(false);
+    }
+
+    public bool GetEndGame()
+    {
+        return endGame;
     }
 
     public void Quit()

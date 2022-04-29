@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
 
     public void MatchEnded(bool victory)
     {
-        if (componentAI != null)
+        if (componentAI != null && !gameManager.GetEndGame())
         {
             componentAI.MatchEnded(victory);
         }

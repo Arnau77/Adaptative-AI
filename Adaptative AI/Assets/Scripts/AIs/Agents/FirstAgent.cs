@@ -8,14 +8,19 @@ using Unity.MLAgents.Sensors;
 public class FirstAgent : Agent
 {
     public AIAgent aiAgent;
-    private bool recollectedObservations = false;
+    public GameObject endGameMenu;
 
     public override void OnEpisodeBegin()
     {
-        recollectedObservations = false;
         aiAgent.Restart();
+        aiAgent.gameManager.Restart();
+        if (endGameMenu != null)
+        {
+            endGameMenu.SetActive(false);
+        }
     }
-    public override void CollectObservations(VectorSensor sensor)
+
+    private void Update()
     {
         if (aiAgent.matchEnded)
         {
@@ -34,10 +39,9 @@ public class FirstAgent : Agent
             }
             EndEpisode();
         }
-        else if (!aiAgent.aiTurn || recollectedObservations)
-        {
-            return;
-        }
+    }
+    public override void CollectObservations(VectorSensor sensor)
+    {
         sensor.AddObservation(aiAgent.player.getLife());
         sensor.AddObservation(aiAgent.player.enemy.getLife());
         sensor.AddObservation(aiAgent.player.getMana());
@@ -55,11 +59,9 @@ public class FirstAgent : Agent
         {
             return;
         }
-        recollectedObservations = true;
         if(aiAgent.CheckDecision(actions.DiscreteActions[0] + 1))
         {
             aiAgent.OptionDecided(actions.DiscreteActions[0] + 1);
-            recollectedObservations = false;
             SetReward(-100f);
         }
         
