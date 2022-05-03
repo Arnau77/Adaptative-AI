@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public enum Options
     {
-        NONE = 0,
+        NONE = -1,
         ATTACK,
         DEFENSE,
         HEAL,
@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     bool firstFrame = true;
     float defendingBonus = 1;
     Options optionChoosen;
+    public bool training = false;
 
 
     // Start is called before the first frame update
@@ -100,7 +101,10 @@ public class Player : MonoBehaviour
         {
             case Options.ATTACK:
                 Instantiate(attackPrefab, enemy.position, Quaternion.identity, enemy.gameObject.transform);
-                gameManager.Log(playerName + " has attacked " + enemy.playerName);
+                if (!training)
+                {
+                    gameManager.Log(playerName + " has attacked " + enemy.playerName);
+                }
                 Attack(gameManager.basicAttackDamage);
                 break;
             case Options.DEFENSE:
@@ -108,11 +112,17 @@ public class Player : MonoBehaviour
                 mana -= gameManager.manaSpentWithDefense;
                 manaSlider.value = mana;
                 defendingBonus = defendingBonus + ((float)gameManager.percentageDefense / 100f);
-                gameManager.Log(playerName + " is defending");
+                if (!training)
+                {
+                    gameManager.Log(playerName + " is defending");
+                }
                 break;
             case Options.SPECIAL_ATTACK:
                 Instantiate(specialAttackPrefab, position, Quaternion.identity, gameObject.transform);
-                gameManager.Log(playerName + " has used a special attack against " + enemy.playerName);
+                if (!training)
+                {
+                    gameManager.Log(playerName + " has used a special attack against " + enemy.playerName);
+                }
                 mana -= gameManager.manaSpentWithSpecialAttack;
                 manaSlider.value = mana;
                 Attack(gameManager.manaAttackDamage);
@@ -128,7 +138,10 @@ public class Player : MonoBehaviour
                 Heal();
                 break;
             case Options.INCREASE_STATS:
-                gameManager.Log(playerName + " has increased its stats");
+                if (!training)
+                {
+                    gameManager.Log(playerName + " has increased its stats");
+                }
                 mana -= gameManager.manaSpentWithIncreasingStats;
                 manaSlider.value = mana;
                 ChangeStats(true, this);
@@ -136,7 +149,10 @@ public class Player : MonoBehaviour
                 Instantiate(increasePrefab, position, Quaternion.identity, gameObject.transform);
                 break;
             case Options.DECREASE_STATS:
-                gameManager.Log(playerName + " has decreased " + enemy.playerName + " stats");
+                if (!training)
+                {
+                    gameManager.Log(playerName + " has decreased " + enemy.playerName + " stats");
+                }
                 mana -= gameManager.manaSpentWithDecreasingStats;
                 manaSlider.value = mana;
                 ChangeStats(false, enemy);
@@ -164,7 +180,10 @@ public class Player : MonoBehaviour
         }
         lifeSlider.value = life;
 
-        gameManager.Log(playerName + " has recovered life");
+        if (!training)
+        {
+            gameManager.Log(playerName + " has recovered life");
+        }
     }
 
     void ChangeStats(bool positiveChange, Player playerToAffect)
@@ -189,7 +208,10 @@ public class Player : MonoBehaviour
             mana = initialMana;
         }
         manaSlider.value = mana;
-        gameManager.Log(playerName + " has recovered mana");
+        if (!training)
+        {
+            gameManager.Log(playerName + " has recovered mana");
+        }
     }
     void Attack(int attackDamage)
     {
@@ -218,7 +240,7 @@ public class Player : MonoBehaviour
 
     public float getDefendingBonus() { return defendingBonus; }
 
-    public void Reset()
+    public virtual void Reset()
     {
         firstFrame = true;
         life = initialLife;

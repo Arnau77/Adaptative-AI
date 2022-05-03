@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     bool logging = false;
     bool buttonsToActivate = false;
     List<string> logsToPrint = new List<string>();
+    bool stop = false;
     
 
     // Start is called before the first frame update
@@ -42,6 +43,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (stop)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                stop = false;
+            }
+            else
+            {
+                return;
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Escape)){
             Pause(true);
             pauseMenu.SetActive(true);
@@ -197,6 +209,11 @@ public class GameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Stop()
+    {
+        stop = true;
     }
 
 }

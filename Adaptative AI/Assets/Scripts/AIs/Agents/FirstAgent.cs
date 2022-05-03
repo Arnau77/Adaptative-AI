@@ -59,10 +59,14 @@ public class FirstAgent : Agent
         {
             return;
         }
-        if(aiAgent.CheckDecision(actions.DiscreteActions[0] + 1))
-        {
-            aiAgent.OptionDecided(actions.DiscreteActions[0] + 1);
+        int decisionChosen = actions.DiscreteActions[0];
+        if(aiAgent.CheckDecision(decisionChosen)){
+            aiAgent.OptionDecided(decisionChosen);
             SetReward(-100f);
+        }
+        else
+        {
+            SetReward(-500f);
         }
         
     }

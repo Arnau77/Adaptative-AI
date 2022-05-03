@@ -22,7 +22,7 @@ public class SimpleAI : AI
         Player.Options optionChosen;
         do
         {
-            optionChosen = (Player.Options)Random.Range(1, 8);
+            optionChosen = (Player.Options)Random.Range(0, 7);
             optionValid = CheckIfOptionIsValid(optionChosen);
         } while (!optionValid);
         player.DecideOption(optionChosen);

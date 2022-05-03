@@ -2,22 +2,22 @@
     "AI": {
         "checkpoints": [
             {
-                "steps": 17088,
-                "file_path": "results\\ppo\\AI\\AI-17088.onnx",
-                "reward": null,
-                "creation_time": 1651257097.4254007,
+                "steps": 132170,
+                "file_path": "results\\ppo\\AI\\AI-132170.onnx",
+                "reward": -1098.388888888889,
+                "creation_time": 1651596318.7464046,
                 "auxillary_file_paths": [
-                    "results\\ppo\\AI\\AI-17088.pt"
+                    "results\\ppo\\AI\\AI-132170.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 17088,
+            "steps": 132170,
             "file_path": "results\\ppo\\AI.onnx",
-            "reward": null,
-            "creation_time": 1651257097.4254007,
+            "reward": -1098.388888888889,
+            "creation_time": 1651596318.7464046,
             "auxillary_file_paths": [
-                "results\\ppo\\AI\\AI-17088.pt"
+                "results\\ppo\\AI\\AI-132170.pt"
             ]
         }
     },
