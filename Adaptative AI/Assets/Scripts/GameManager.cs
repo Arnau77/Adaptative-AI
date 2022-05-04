@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
     public int percentageChangingStats = 10;
     public int percentageHealing = 50;
     public int manaSpentWithSpecialAttack = 20;
-    public int manaSpentWithIncreasingStats = 5;
-    public int manaSpentWithDecreasingStats = 5;
+    public int manaSpentWithIncreasingStats = 15;
+    public int manaSpentWithDecreasingStats = 15;
     public int manaSpentWithHealing = 30;
     public int manaSpentWithDefense = 15;
     bool endGame = false;

@@ -9,12 +9,13 @@ public class PlayerTraining : Player
     public GameObject[] ais;
     public string[] aiNames;
     int numberOfEpisodes = -1;
+    int totalRangeOfRandomNum = 6;
     
     public override void Reset()
     {
         training = false;
         numberOfEpisodes++;
-        int i = Random.Range(0, numberOfEpisodes > 900 ? 7 : 6);
+        int i = Random.Range(0, totalRangeOfRandomNum);
         componentAI = (AI)ais[i].GetComponent(aiNames[i]);
         if (componentAI != null)
         {
@@ -25,9 +26,9 @@ public class PlayerTraining : Player
             Debug.LogWarning("PLAYER");
         }
 
-        if (numberOfEpisodes > 1000)
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            gameManager.Stop();
+            totalRangeOfRandomNum = 7;
         }
         base.Reset();
     }
