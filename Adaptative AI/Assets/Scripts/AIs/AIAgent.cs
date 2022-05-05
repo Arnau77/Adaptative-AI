@@ -10,6 +10,7 @@ public class AIAgent : AI
     [HideInInspector] public bool matchEnded = false;
     public override void ChooseOption()
     {
+
         aiTurn = true;
     }
 

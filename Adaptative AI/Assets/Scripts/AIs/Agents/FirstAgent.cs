@@ -47,6 +47,10 @@ public class FirstAgent : Agent
             text.text = reward.ToString();
             EndEpisode();
         }
+        else if (aiAgent.aiTurn)
+        {
+            RequestDecision();
+        }
     }
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -80,4 +84,5 @@ public class FirstAgent : Agent
         }
         
     }
+
 }
