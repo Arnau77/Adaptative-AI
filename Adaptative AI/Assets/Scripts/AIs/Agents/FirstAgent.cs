@@ -9,9 +9,12 @@ public class FirstAgent : Agent
 {
     public AIAgent aiAgent;
     public GameObject endGameMenu;
+    public UnityEngine.UI.Text text;
+    float reward = 0;
 
     public override void OnEpisodeBegin()
     {
+        reward = 0;
         aiAgent.Restart();
         aiAgent.gameManager.Restart();
         if (endGameMenu != null)
@@ -26,17 +29,22 @@ public class FirstAgent : Agent
         {
             if (aiAgent.victory)
             {
-                SetReward(10000f);
+                SetReward(100000f);
+                reward += 100000f;
                 SetReward(aiAgent.player.getLife());
+                reward += aiAgent.player.getLife();
                 Debug.Log("Victory!");
             }
             else
             {
-                SetReward(-10000f);
+                SetReward(-100000f);
+                reward -= 100000f;
                 SetReward(-aiAgent.player.enemy.getLife());
+                reward -= aiAgent.player.enemy.getLife();
                 Debug.Log("Lost!");
 
             }
+            text.text = reward.ToString();
             EndEpisode();
         }
     }
@@ -63,10 +71,12 @@ public class FirstAgent : Agent
         if(aiAgent.CheckDecision(decisionChosen)){
             aiAgent.OptionDecided(decisionChosen);
             SetReward(-100f);
+            reward -= 100f;
         }
         else
         {
             SetReward(-500f);
+            reward -= 500f;
         }
         
     }

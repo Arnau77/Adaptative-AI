@@ -1,0 +1,56 @@
+{
+    "AI": {
+        "checkpoints": [
+            {
+                "steps": 499961,
+                "file_path": "results\\AIRun3\\AI\\AI-499961.onnx",
+                "reward": -1000.6808510638298,
+                "creation_time": 1651745485.7887118,
+                "auxillary_file_paths": [
+                    "results\\AIRun3\\AI\\AI-499961.pt"
+                ]
+            },
+            {
+                "steps": 999951,
+                "file_path": "results\\AIRun3\\AI\\AI-999951.onnx",
+                "reward": -730.96875,
+                "creation_time": 1651747503.5090635,
+                "auxillary_file_paths": [
+                    "results\\AIRun3\\AI\\AI-999951.pt"
+                ]
+            },
+            {
+                "steps": 1499957,
+                "file_path": "results\\AIRun3\\AI\\AI-1499957.onnx",
+                "reward": -604.7777777777778,
+                "creation_time": 1651749539.7997258,
+                "auxillary_file_paths": [
+                    "results\\AIRun3\\AI\\AI-1499957.pt"
+                ]
+            },
+            {
+                "steps": 1571339,
+                "file_path": "results\\AIRun3\\AI\\AI-1571339.onnx",
+                "reward": null,
+                "creation_time": 1651749866.3938746,
+                "auxillary_file_paths": [
+                    "results\\AIRun3\\AI\\AI-1571339.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1571339,
+            "file_path": "results\\AIRun3\\AI.onnx",
+            "reward": null,
+            "creation_time": 1651749866.3938746,
+            "auxillary_file_paths": [
+                "results\\AIRun3\\AI\\AI-1571339.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.11.0+cpu"
+    }
+}
