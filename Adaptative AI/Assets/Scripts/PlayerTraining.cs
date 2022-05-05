@@ -26,9 +26,14 @@ public class PlayerTraining : Player
             Debug.LogWarning("PLAYER");
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKey(KeyCode.P))
         {
             totalRangeOfRandomNum = 7;
+        }
+
+        else if (Input.GetKey(KeyCode.X))
+        {
+            totalRangeOfRandomNum = 6;
         }
         base.Reset();
     }
