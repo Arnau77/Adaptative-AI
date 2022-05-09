@@ -29,18 +29,18 @@ public class FirstAgent : Agent
         {
             if (aiAgent.victory)
             {
-                SetReward(100000f);
-                reward += 100000f;
-                SetReward(aiAgent.player.getLife());
-                reward += aiAgent.player.getLife();
+                SetReward(1f);
+                reward += 1f;
+                //SetReward(aiAgent.player.getLife());
+                //reward += aiAgent.player.getLife();
                 Debug.Log("Victory!");
             }
             else
             {
-                SetReward(-100000f);
-                reward -= 100000f;
-                SetReward(-aiAgent.player.enemy.getLife());
-                reward -= aiAgent.player.enemy.getLife();
+                SetReward(-1f);
+                reward -= 1f;
+                //SetReward(-aiAgent.player.enemy.getLife());
+                //reward -= aiAgent.player.enemy.getLife();
                 Debug.Log("Lost!");
 
             }
@@ -74,13 +74,13 @@ public class FirstAgent : Agent
         int decisionChosen = actions.DiscreteActions[0];
         if(aiAgent.CheckDecision(decisionChosen)){
             aiAgent.OptionDecided(decisionChosen);
-            SetReward(-100f);
-            reward -= 100f;
+            //SetReward(-10f);
+            //reward -= 10f;
         }
         else
         {
-            SetReward(-500f);
-            reward -= 500f;
+            //SetReward(-500f);
+           // reward -= 500f;
         }
         
     }
