@@ -52,6 +52,10 @@ public class AttackAndHealAI : AI
             if (!CheckIfOptionIsValid(optionChosen))
             {
                 optionChosen = Player.Options.RECOVER_MANA;
+                if (!CheckIfOptionIsValid(optionChosen))
+                {
+                    optionChosen = Player.Options.ATTACK;
+                }
             }
         }
         player.DecideOption(optionChosen);

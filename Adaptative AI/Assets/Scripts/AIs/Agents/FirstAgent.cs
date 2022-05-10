@@ -11,6 +11,7 @@ public class FirstAgent : Agent
     public GameObject endGameMenu;
     public UnityEngine.UI.Text text;
     float reward = 0;
+    public bool training = false;
 
     public override void OnEpisodeBegin()
     {
@@ -30,21 +31,30 @@ public class FirstAgent : Agent
             if (aiAgent.victory)
             {
                 SetReward(1f);
-                reward += 1f;
-                //SetReward(aiAgent.player.getLife());
-                //reward += aiAgent.player.getLife();
-                Debug.Log("Victory!");
+                if (training)
+                {
+                    reward += 1f;
+                    //SetReward(aiAgent.player.getLife() * 0.01f);
+                    //reward += aiAgent.player.getLife() * 0.01f;
+                    Debug.Log("Victory!");
+                }
             }
             else
             {
                 SetReward(-1f);
-                reward -= 1f;
-                //SetReward(-aiAgent.player.enemy.getLife());
-                //reward -= aiAgent.player.enemy.getLife();
-                Debug.Log("Lost!");
+                if (training)
+                {
+                    reward -= 1f;
+                    //SetReward(-aiAgent.player.enemy.getLife() * 0.01f);
+                    //reward -= aiAgent.player.enemy.getLife() * 0.01f;
+                    Debug.Log("Lost!");
+                }
 
             }
-            text.text = reward.ToString();
+            if (training)
+            {
+                text.text = reward.ToString();
+            }
             EndEpisode();
         }
         else if (aiAgent.aiTurn)
@@ -73,14 +83,27 @@ public class FirstAgent : Agent
         }
         int decisionChosen = actions.DiscreteActions[0];
         if(aiAgent.CheckDecision(decisionChosen)){
+            if (decisionChosen == 2)
+            {
+                SetReward(0.01f);
+                reward += 0.01f;
+            }
             aiAgent.OptionDecided(decisionChosen);
             //SetReward(-10f);
             //reward -= 10f;
         }
         else
         {
-            //SetReward(-500f);
-           // reward -= 500f;
+            SetReward(-0.05f);
+            if (training)
+            {
+                reward -= 0.05f;
+            }
+            if (reward < -20f)
+            {
+                aiAgent.matchEnded=true;
+                aiAgent.victory = false;
+            }
         }
         
     }

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public int basicAttackDamage = 1;
     public int manaAttackDamage = 3;
     public int percentageRecoveryMana = 70;
-    public int percentageDefense = 50;
+    public int percentageDefense = 70;
     public int maxOfTimesChangingLevelOfStats = 3;
     public int percentageChangingStats = 10;
     public int percentageHealing = 50;
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public int manaSpentWithDecreasingStats = 15;
     public int manaSpentWithHealing = 30;
     public int manaSpentWithDefense = 15;
+    public int maxOfTimesToRecoverMana = 10;
     bool endGame = false;
     bool decidingOptions = true;
     bool logging = false;

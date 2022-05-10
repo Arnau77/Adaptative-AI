@@ -35,7 +35,7 @@ public class AI : MonoBehaviour
             case Player.Options.NONE:
                 return false;
             case Player.Options.DECREASE_STATS:
-                if(player.getMana() < gameManager.manaSpentWithDecreasingStats || player.enemy.getLevelOfChangeStats() <= -gameManager.maxOfTimesChangingLevelOfStats)
+                if (player.getMana() < gameManager.manaSpentWithDecreasingStats || player.enemy.getLevelOfChangeStats() <= -gameManager.maxOfTimesChangingLevelOfStats)
                 {
                     return false;
                 }
@@ -53,13 +53,13 @@ public class AI : MonoBehaviour
                 }
                 break;
             case Player.Options.INCREASE_STATS:
-                if (player.getMana() < gameManager.manaSpentWithIncreasingStats || player.getLevelOfChangeStats() >= gameManager.maxOfTimesChangingLevelOfStats)
+                if (player.getMana() < gameManager.manaSpentWithIncreasingStats || player.getLevelOfChangeStats() >= gameManager.maxOfTimesChangingLevelOfStats) 
                 {
                     return false;
                 }
                 break;
             case Player.Options.RECOVER_MANA:
-                if (player.getMana() >= player.initialMana)
+                if (player.getMana() >= player.initialMana || player.getTimesToRecoverMana() <= 0)
                 {
                     return false;
                 }

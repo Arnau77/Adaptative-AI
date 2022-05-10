@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
     public Slider manaSlider = null;
     public Text lifeinitialValueText = null;
     public Text manainitialValueText = null;
+    public Text maxTimesToRecoverManaText = null;
+    public Text timesToRecoverManaText = null;
     public GameObject decreasePrefab = null;
     public GameObject increasePrefab = null;
     public GameObject healPrefab = null;
@@ -47,11 +49,11 @@ public class Player : MonoBehaviour
     int defense;
     int mana;
     int levelOfChangeStats = 0;
+    int timesToRecoverMana = 0;
     bool firstFrame = true;
     float defendingBonus = 1;
     Options optionChoosen;
     public bool training = false;
-
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if (!playerTurn || endTurn)
             return;
 
@@ -129,6 +132,11 @@ public class Player : MonoBehaviour
                 break;
             case Options.RECOVER_MANA:
                 Instantiate(manaPrefab, position, Quaternion.identity, gameObject.transform);
+                timesToRecoverMana--;
+                if (timesToRecoverManaText != null)
+                {
+                    timesToRecoverManaText.text = timesToRecoverMana.ToString();
+                }
                 RecoverMana();
                 break;
             case Options.HEAL:
@@ -238,6 +246,8 @@ public class Player : MonoBehaviour
 
     public int getLevelOfChangeStats() { return levelOfChangeStats; }
 
+    public int getTimesToRecoverMana() { return timesToRecoverMana; }
+
     public float getDefendingBonus() { return defendingBonus; }
 
     public virtual void Reset()
@@ -256,7 +266,16 @@ public class Player : MonoBehaviour
         optionChoosen = Options.NONE;
         defendingBonus = 1;
         levelOfChangeStats = 0;
+        timesToRecoverMana = gameManager.maxOfTimesToRecoverMana;
         lifeinitialValueText.text = initialLife.ToString();
         manainitialValueText.text = initialMana.ToString();
+        if (maxTimesToRecoverManaText != null)
+        {
+            maxTimesToRecoverManaText.text = gameManager.maxOfTimesToRecoverMana.ToString();
+        }
+        if (timesToRecoverManaText != null)
+        {
+            timesToRecoverManaText.text = timesToRecoverMana.ToString();
+        }
     }
 }

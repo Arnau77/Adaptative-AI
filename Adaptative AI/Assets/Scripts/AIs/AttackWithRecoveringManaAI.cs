@@ -42,6 +42,10 @@ public class AttackWithRecoveringManaAI : AI
             if (!CheckIfOptionIsValid(optionChosen))
             {
                 optionChosen = Player.Options.RECOVER_MANA;
+                if (!CheckIfOptionIsValid(optionChosen))
+                {
+                    optionChosen = Player.Options.ATTACK;
+                }
             }
         }
         player.DecideOption(optionChosen);

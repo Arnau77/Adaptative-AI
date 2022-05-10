@@ -8,15 +8,35 @@ public class PlayerTraining : Player
 
     public GameObject[] ais;
     public string[] aiNames;
-    int numberOfEpisodes = -1;
-    int totalRangeOfRandomNum = 6;
+    int actualRangeOfRandomNum;
+    int totalRangeOfRandomNum;
     int finalNumber = -1;
-    
+
+    private void Awake()
+    {
+        totalRangeOfRandomNum = ais.Length;
+        actualRangeOfRandomNum = totalRangeOfRandomNum;
+    }
+
     public override void Reset()
     {
+        if (Input.GetKey(KeyCode.P))
+        {
+            if (actualRangeOfRandomNum == totalRangeOfRandomNum)
+            {
+                actualRangeOfRandomNum--;
+            }
+            else
+            {
+                actualRangeOfRandomNum++;
+            }
+        }
         training = false;
-        numberOfEpisodes++;
-        int i = Random.Range(0, totalRangeOfRandomNum);
+        int i = Random.Range(0, actualRangeOfRandomNum);
+        if( i + 1 == totalRangeOfRandomNum)
+        {
+            i = Random.Range(0, actualRangeOfRandomNum);
+        }
         if (Input.GetKey(KeyCode.Alpha0))
         {
             Debug.Log("AI: Attack And Heal");
@@ -61,6 +81,7 @@ public class PlayerTraining : Player
         {
             i = finalNumber;
         }
+        i = 10;
         componentAI = (AI)ais[i].GetComponent(aiNames[i]);
         if (componentAI != null)
         {
@@ -69,18 +90,6 @@ public class PlayerTraining : Player
         else
         {
             Debug.LogWarning("PLAYER");
-        }
-
-        
-
-        if (Input.GetKey(KeyCode.P))
-        {
-            totalRangeOfRandomNum = 7;
-        }
-
-        else if (Input.GetKey(KeyCode.X))
-        {
-            totalRangeOfRandomNum = 6;
         }
         base.Reset();
     }

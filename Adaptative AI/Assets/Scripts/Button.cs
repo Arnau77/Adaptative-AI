@@ -68,7 +68,7 @@ public class Button : MonoBehaviour
                 }
                 break;
             case Player.Options.INCREASE_STATS:
-                if (player.getMana() >= gameManager.manaSpentWithIncreasingStats && player.getLevelOfChangeStats() < gameManager.maxOfTimesChangingLevelOfStats)
+                if (player.getMana() >= gameManager.manaSpentWithIncreasingStats && player.getLevelOfChangeStats() < gameManager.maxOfTimesChangingLevelOfStats) 
                 {
                     button.interactable = true;
                 }
@@ -79,6 +79,16 @@ public class Button : MonoBehaviour
                 break;
             case Player.Options.SPECIAL_ATTACK:
                 if (player.getMana() >= gameManager.manaSpentWithSpecialAttack)
+                {
+                    button.interactable = true;
+                }
+                else
+                {
+                    button.interactable = false;
+                }
+                break;
+            case Player.Options.RECOVER_MANA:
+                if (player.getTimesToRecoverMana() > 0)
                 {
                     button.interactable = true;
                 }

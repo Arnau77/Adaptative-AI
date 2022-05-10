@@ -1,0 +1,29 @@
+{
+    "AI": {
+        "checkpoints": [
+            {
+                "steps": 95033,
+                "file_path": "results\\TopAIRun14\\AI\\AI-95033.onnx",
+                "reward": null,
+                "creation_time": 1652201914.6031885,
+                "auxillary_file_paths": [
+                    "results\\TopAIRun14\\AI\\AI-95033.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 95033,
+            "file_path": "results\\TopAIRun14\\AI.onnx",
+            "reward": null,
+            "creation_time": 1652201914.6031885,
+            "auxillary_file_paths": [
+                "results\\TopAIRun14\\AI\\AI-95033.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.11.0+cpu"
+    }
+}
