@@ -81,7 +81,6 @@ public class PlayerTraining : Player
         {
             i = finalNumber;
         }
-        i = 10;
         componentAI = (AI)ais[i].GetComponent(aiNames[i]);
         if (componentAI != null)
         {
