@@ -799,6 +799,7 @@ GameObject:
   - component: {fileID: 224983392}
   - component: {fileID: 224983391}
   - component: {fileID: 224983390}
+  - component: {fileID: 224983393}
   m_Layer: 5
   m_Name: RecoverManaButton
   m_TagString: Untagged
@@ -818,6 +819,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 873991377}
+  - {fileID: 1551570621}
+  - {fileID: 594677804}
+  - {fileID: 1931572628}
   m_Father: {fileID: 1566102539}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -875,7 +879,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -928,6 +932,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224983388}
   m_CullTransparentMesh: 0
+--- !u!114 &224983393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224983388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b17fe47714312346bcd4e2d63cc3557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 224983390}
+  player1: {fileID: 712127971}
+  player2: {fileID: 799977060}
+  gameManager: {fileID: 1155606228}
+  option: 4
 --- !u!1 &241002256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1309,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1379,7 +1400,7 @@ MonoBehaviour:
   player1: {fileID: 712127971}
   player2: {fileID: 799977060}
   gameManager: {fileID: 1155606228}
-  option: 3
+  option: 2
 --- !u!1 &332182804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,7 +1724,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1794,7 +1815,7 @@ MonoBehaviour:
   player1: {fileID: 712127971}
   player2: {fileID: 799977060}
   gameManager: {fileID: 1155606228}
-  option: 2
+  option: 1
 --- !u!1 &376626998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,6 +2986,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579352620}
   m_CullTransparentMesh: 0
+--- !u!1 &594677803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 594677804}
+  - component: {fileID: 594677806}
+  - component: {fileID: 594677805}
+  m_Layer: 5
+  m_Name: TotalTimesToRecoverMana
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &594677804
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594677803}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0002323, y: 1.0002323, z: 1.0002323}
+  m_Children: []
+  m_Father: {fileID: 224983389}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 144.13002, y: -14.820008}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &594677805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594677803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 10
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 10
+--- !u!222 &594677806
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594677803}
+  m_CullTransparentMesh: 0
 --- !u!1 &681112138
 GameObject:
   m_ObjectHideFlags: 0
@@ -3122,6 +3221,8 @@ MonoBehaviour:
   manaSlider: {fileID: 63075976}
   lifeinitialValueText: {fileID: 345514742}
   manainitialValueText: {fileID: 1975806840}
+  maxTimesToRecoverManaText: {fileID: 594677805}
+  timesToRecoverManaText: {fileID: 1551570622}
   decreasePrefab: {fileID: 578736367315375670, guid: 9015201b7abbb0a4e9a572b2da29ea1d,
     type: 3}
   increasePrefab: {fileID: 15983432167910191, guid: 0a49ea6cca2b71c45bd3a3eff0da4b3f,
@@ -3138,6 +3239,7 @@ MonoBehaviour:
     type: 3}
   position: {x: 12.5, y: 0.5, z: 90}
   componentAI: {fileID: 0}
+  training: 0
 --- !u!224 &712127972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3258,6 +3360,8 @@ GameObject:
   m_Component:
   - component: {fileID: 799977059}
   - component: {fileID: 799977060}
+  - component: {fileID: 799977063}
+  - component: {fileID: 799977062}
   - component: {fileID: 799977061}
   m_Layer: 5
   m_Name: Player2
@@ -3317,6 +3421,8 @@ MonoBehaviour:
   manaSlider: {fileID: 2044426406}
   lifeinitialValueText: {fileID: 1362942091}
   manainitialValueText: {fileID: 341717760}
+  maxTimesToRecoverManaText: {fileID: 0}
+  timesToRecoverManaText: {fileID: 0}
   decreasePrefab: {fileID: 578736367315375670, guid: 9015201b7abbb0a4e9a572b2da29ea1d,
     type: 3}
   increasePrefab: {fileID: 15983432167910191, guid: 0a49ea6cca2b71c45bd3a3eff0da4b3f,
@@ -3332,7 +3438,8 @@ MonoBehaviour:
   specialAttackPrefab: {fileID: 380957289830320481, guid: 0b8d92ed5e5ed854b8d39eecb4e45851,
     type: 3}
   position: {x: 0, y: 0.5, z: 90}
-  componentAI: {fileID: 799977061}
+  componentAI: {fileID: 799977063}
+  training: 0
 --- !u!114 &799977061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3342,16 +3449,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 799977058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b8c6a8f2f41824b8ca9ace48e09230, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a578650b936085428a382450c14f722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+  aiAgent: {fileID: 799977063}
+  endGameMenu: {fileID: 0}
+  text: {fileID: 0}
+  training: 0
+--- !u!114 &799977062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799977058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 8
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 0
+      BranchSizes: 07000000
+    VectorActionSize: 07000000
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 0
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 5022602860645237092, guid: 9688c64a2c0a09b4cbeed01de556f14b, type: 3}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: AI
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_ObservableAttributeHandling: 0
+--- !u!114 &799977063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799977058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55630a5de7e59e449a7c5a93541f733b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 799977060}
   gameManager: {fileID: 1155606228}
-  maxLifeToFocusOnAttack: 25
-  maxLifeToHeal: 30
-  maxLifeToAttackInsteadOfHeal: 10
-  levelOfStatToStartIncresingStats: -2
-  levelOfStatToStartDecreasingStats: 2
+  aiTurn: 0
+  victory: 0
+  matchEnded: 0
 --- !u!1 &816106490
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,7 +4236,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4172,7 +4327,7 @@ MonoBehaviour:
   player1: {fileID: 712127971}
   player2: {fileID: 799977060}
   gameManager: {fileID: 1155606228}
-  option: 6
+  option: 5
 --- !u!1 &1020181791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4581,15 +4736,16 @@ MonoBehaviour:
   basicAttackDamage: 1
   manaAttackDamage: 3
   percentageRecoveryMana: 70
-  percentageDefense: 50
+  percentageDefense: 70
   maxOfTimesChangingLevelOfStats: 3
   percentageChangingStats: 10
   percentageHealing: 50
   manaSpentWithSpecialAttack: 20
-  manaSpentWithIncreasingStats: 5
-  manaSpentWithDecreasingStats: 5
+  manaSpentWithIncreasingStats: 15
+  manaSpentWithDecreasingStats: 15
   manaSpentWithHealing: 30
   manaSpentWithDefense: 15
+  maxOfTimesToRecoverMana: 10
 --- !u!4 &1155606229
 Transform:
   m_ObjectHideFlags: 0
@@ -5022,7 +5178,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5113,7 +5269,7 @@ MonoBehaviour:
   player1: {fileID: 712127971}
   player2: {fileID: 799977060}
   gameManager: {fileID: 1155606228}
-  option: 7
+  option: 6
 --- !u!1 &1258578177
 GameObject:
   m_ObjectHideFlags: 0
@@ -5962,6 +6118,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477417082}
   m_CullTransparentMesh: 0
+--- !u!1 &1551570620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1551570621}
+  - component: {fileID: 1551570623}
+  - component: {fileID: 1551570622}
+  m_Layer: 5
+  m_Name: TimesToRecoverManaLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1551570621
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551570620}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0002323, y: 1.0002323, z: 1.0002323}
+  m_Children: []
+  m_Father: {fileID: 224983389}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 128.5, y: -14.820008}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1551570622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551570620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 10
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 10
+--- !u!222 &1551570623
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551570620}
+  m_CullTransparentMesh: 0
 --- !u!1 &1566102538
 GameObject:
   m_ObjectHideFlags: 0
@@ -6521,7 +6755,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7349,6 +7583,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903090438}
   m_CullTransparentMesh: 0
+--- !u!1 &1931572627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1931572628}
+  - component: {fileID: 1931572630}
+  - component: {fileID: 1931572629}
+  m_Layer: 5
+  m_Name: /
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1931572628
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931572627}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0002323, y: 1.0002323, z: 1.0002323}
+  m_Children: []
+  m_Father: {fileID: 224983389}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 140.3, y: -14.820008}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1931572629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931572627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 10
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: /
+--- !u!222 &1931572630
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931572627}
+  m_CullTransparentMesh: 0
 --- !u!1 &1975806839
 GameObject:
   m_ObjectHideFlags: 0
@@ -7516,7 +7828,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7607,7 +7919,7 @@ MonoBehaviour:
   player1: {fileID: 712127971}
   player2: {fileID: 799977060}
   gameManager: {fileID: 1155606228}
-  option: 4
+  option: 3
 --- !u!1 &2014963636
 GameObject:
   m_ObjectHideFlags: 0

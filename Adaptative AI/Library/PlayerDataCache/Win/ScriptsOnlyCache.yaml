@@ -1,9 +1,10 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AIAgent
     - AttackFeedback
     - Button
-    - FullAI
+    - FirstAgent
     - GameManager
     - HealDefenseAndManaFeedback
     - IncreaseOrDecreaseFeedback
@@ -18,6 +19,11 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    Unity.Barracuda.dll:
+    - Unity.Barracuda.NNModel
+    - Unity.Barracuda.NNModelData
+    Unity.ML-Agents.dll:
+    - Unity.MLAgents.Policies.BehaviorParameters
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -47,44 +53,54 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 72
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11264}
+      Script: {instanceID: 11308}
     - Class: 114
-      Script: {instanceID: 11554}
+      Script: {instanceID: 11372}
     - Class: 114
-      Script: {instanceID: 11610}
+      Script: {instanceID: 11670}
     - Class: 114
-      Script: {instanceID: 12272}
+      Script: {instanceID: 11734}
     - Class: 114
-      Script: {instanceID: 12280}
+      Script: {instanceID: 12574}
     - Class: 114
-      Script: {instanceID: 12446}
+      Script: {instanceID: 12582}
     - Class: 114
-      Script: {instanceID: 12736}
+      Script: {instanceID: 12790}
     - Class: 114
-      Script: {instanceID: 12990}
+      Script: {instanceID: 13172}
     - Class: 114
-      Script: {instanceID: 12992}
+      Script: {instanceID: 13284}
     - Class: 114
-      Script: {instanceID: 13518}
+      Script: {instanceID: 13516}
     - Class: 114
-      Script: {instanceID: 13524}
+      Script: {instanceID: 13572}
     - Class: 114
-      Script: {instanceID: 13760}
+      Script: {instanceID: 14150}
     - Class: 114
-      Script: {instanceID: 13924}
+      Script: {instanceID: 14178}
     - Class: 114
-      Script: {instanceID: 14348}
+      Script: {instanceID: 14188}
     - Class: 114
-      Script: {instanceID: 14376}
+      Script: {instanceID: 14498}
     - Class: 114
-      Script: {instanceID: 14418}
+      Script: {instanceID: 14698}
     - Class: 114
-      Script: {instanceID: 14438}
+      Script: {instanceID: 14760}
+    - Class: 114
+      Script: {instanceID: 15248}
+    - Class: 114
+      Script: {instanceID: 15284}
+    - Class: 114
+      Script: {instanceID: 15336}
+    - Class: 114
+      Script: {instanceID: 15362}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -112,10 +128,22 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
+      Hash: 686b3497e8cc9456d6fb80c15d366347
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Integrations.Match3
+    className: Match3SensorComponent
+  - hash:
+      serializedVersion: 2
       Hash: c42672c997f8be6b1aa86a927ebea785
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SelectionCaret
+  - hash:
+      serializedVersion: 2
+      Hash: d9a87d6ff79d123f436e55d2848fb526
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FirstAgent
   - hash:
       serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
@@ -134,6 +162,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AttackAndHealAI
+  - hash:
+      serializedVersion: 2
+      Hash: 41e297c231f699948db64f04d5fba060
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents
+    className: MLAgentsSettings
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -220,6 +254,24 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 6b7677c4aaa7665a0964ff549bbb12a3
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents
+    className: DecisionRequester
+  - hash:
+      serializedVersion: 2
+      Hash: 8214f1934370ba1e4dd13b41b088bed4
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Sensors
+    className: GridSensorComponent
+  - hash:
+      serializedVersion: 2
+      Hash: a3ea236b81667ce963577b016d4aef95
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Sensors
+    className: RayPerceptionSensorComponent2D
+  - hash:
+      serializedVersion: 2
       Hash: 523ce309f50d9eee6a8fc0e2f86c9c97
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: 
@@ -260,6 +312,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 800dab17639335ea48e8aaca55e80bb1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerTraining
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -316,6 +374,12 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: e1237ad6386e516b14751d54c83d3471
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Sensors
+    className: RenderTextureSensorComponent
+  - hash:
+      serializedVersion: 2
       Hash: 68eeedc5238e56e2a09f7960870ef95c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -364,7 +428,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: ceec76a5c26c96eaaa349abfdecd930f
+      Hash: 816fd6c5d65b8a780086c0d5b81683ce
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -374,6 +438,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AttackWithRecoveringManaAI
+  - hash:
+      serializedVersion: 2
+      Hash: 947811fb1874e8cae582473f3af70981
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Sensors
+    className: BufferSensorComponent
+  - hash:
+      serializedVersion: 2
+      Hash: 4e911433915684674eb30b798ed78a3e
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Demonstrations
+    className: DemonstrationRecorder
   - hash:
       serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
@@ -400,6 +476,12 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: 36930db3116562932d730ec657bbfe20
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Sensors
+    className: RayPerceptionSensorComponent3D
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -410,6 +492,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AttackHealAndDefenseAI
+  - hash:
+      serializedVersion: 2
+      Hash: 550cd92f36d03903a502911efc2e95c7
+    assemblyName: Unity.Barracuda.dll
+    namespaceName: Unity.Barracuda
+    className: NNModel
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -440,6 +528,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 422f48e4fe97392f35c9dde63be9e292
+    assemblyName: Unity.Barracuda.dll
+    namespaceName: Unity.Barracuda
+    className: NNModelData
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -508,10 +602,28 @@ ScriptsOnlyBuild:
     className: OnlyAttackAI
   - hash:
       serializedVersion: 2
+      Hash: e35e7183e89d279c3e0db1c6098b7d87
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Integrations.Match3
+    className: Match3ActuatorComponent
+  - hash:
+      serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: e4a5c1dd0e9bfd90a7c8ed7e9b843d01
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Policies
+    className: BehaviorParameters
+  - hash:
+      serializedVersion: 2
+      Hash: 5d470960c5db2f9c229c37ff99d0996e
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents
+    className: Agent
   - hash:
       serializedVersion: 2
       Hash: 68eeedc5238e56e2a09f7960870ef95c
@@ -520,16 +632,28 @@ ScriptsOnlyBuild:
     className: AttackFeedback
   - hash:
       serializedVersion: 2
-      Hash: 7b2705d663b3219c2c3b4b1abf1f1e08
+      Hash: fa8fa155680478de7f32a11aa8bdf428
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
+  - hash:
+      serializedVersion: 2
+      Hash: 8c6e48ab23009638149489605a7da0ba
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Demonstrations
+    className: DemonstrationSummary
   - hash:
       serializedVersion: 2
       Hash: 6939772cb3ce775a8e8d99f332534491
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 2cd31c0dbdb9d644f16baa3547a634ae
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Sensors
+    className: CameraSensorComponent
   - hash:
       serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
@@ -554,6 +678,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SliderColorChange
+  - hash:
+      serializedVersion: 2
+      Hash: 78b92d146b725f9d279270fe0735cba1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AIAgent
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -614,6 +744,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestRunner.Utils
     className: TestRunCallbackListener
+  - hash:
+      serializedVersion: 2
+      Hash: be5031a510e76cddf1351fd6c181d147
+    assemblyName: Unity.ML-Agents.dll
+    namespaceName: Unity.MLAgents.Sensors
+    className: VectorSensorComponent
   - hash:
       serializedVersion: 2
       Hash: 9726bc46e15d44429bd38fb013657f1e

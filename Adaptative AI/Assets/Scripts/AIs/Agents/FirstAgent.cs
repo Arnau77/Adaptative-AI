@@ -17,7 +17,10 @@ public class FirstAgent : Agent
     {
         reward = 0;
         aiAgent.Restart();
-        aiAgent.gameManager.Restart();
+        if (training)
+        {
+            aiAgent.gameManager.Restart();
+        }
         if (endGameMenu != null)
         {
             endGameMenu.SetActive(false);
