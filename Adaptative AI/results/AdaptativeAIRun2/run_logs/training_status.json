@@ -1,0 +1,38 @@
+{
+    "Adaptative AI": {
+        "checkpoints": [
+            {
+                "steps": 99999,
+                "file_path": "results\\AdaptativeAIRun2\\Adaptative AI\\Adaptative AI-99999.onnx",
+                "reward": 0.1458333314706882,
+                "creation_time": 1654008010.621791,
+                "auxillary_file_paths": [
+                    "results\\AdaptativeAIRun2\\Adaptative AI\\Adaptative AI-99999.pt"
+                ]
+            },
+            {
+                "steps": 100006,
+                "file_path": "results\\AdaptativeAIRun2\\Adaptative AI\\Adaptative AI-100006.onnx",
+                "reward": 0.0961538444344814,
+                "creation_time": 1654008010.6695282,
+                "auxillary_file_paths": [
+                    "results\\AdaptativeAIRun2\\Adaptative AI\\Adaptative AI-100006.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 100006,
+            "file_path": "results\\AdaptativeAIRun2\\Adaptative AI.onnx",
+            "reward": 0.0961538444344814,
+            "creation_time": 1654008010.6695282,
+            "auxillary_file_paths": [
+                "results\\AdaptativeAIRun2\\Adaptative AI\\Adaptative AI-100006.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.11.0+cpu"
+    }
+}
