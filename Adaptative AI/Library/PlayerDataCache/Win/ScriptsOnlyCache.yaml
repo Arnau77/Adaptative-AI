@@ -4,11 +4,12 @@ ScriptsOnlyBuild:
     - AIAgent
     - AttackFeedback
     - Button
-    - FirstAgent
     - GameManager
     - HealDefenseAndManaFeedback
     - IncreaseOrDecreaseFeedback
     - Player
+    - PlayerAI
+    - SecondAgent
     - SliderColorChange
     - SpecialAttackFeedback
     Unity.2D.Animation.Editor.dll:
@@ -62,8 +63,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11308}
     - Class: 114
-      Script: {instanceID: 11372}
-    - Class: 114
       Script: {instanceID: 11670}
     - Class: 114
       Script: {instanceID: 11734}
@@ -94,13 +93,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14760}
     - Class: 114
-      Script: {instanceID: 15248}
+      Script: {instanceID: 14934}
     - Class: 114
-      Script: {instanceID: 15284}
+      Script: {instanceID: 15250}
     - Class: 114
-      Script: {instanceID: 15336}
+      Script: {instanceID: 15286}
     - Class: 114
-      Script: {instanceID: 15362}
+      Script: {instanceID: 15338}
+    - Class: 114
+      Script: {instanceID: 15364}
+    - Class: 114
+      Script: {instanceID: 29124}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -698,6 +701,12 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: 550b0af8dd5f6d78ab6573e9d32288e5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SecondAgent
+  - hash:
+      serializedVersion: 2
       Hash: 8cd1cbba27f3cb1717254f668e9e0d5a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -810,6 +819,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 6038117cbfeeb7e5f4698b9eed07cc39
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerAI
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainScene.unity

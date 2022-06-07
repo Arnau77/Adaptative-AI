@@ -54,6 +54,8 @@ public class Player : MonoBehaviour
     float defendingBonus = 1;
     Options optionChoosen;
     public bool training = false;
+    protected int finalLife = 0;
+    protected int finalEnemyLife = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +97,8 @@ public class Player : MonoBehaviour
         {
             componentAI.MatchEnded(victory);
         }
+        finalLife = life;
+        finalEnemyLife = enemy.life;
     }
 
     void ExecuteOption()
@@ -276,6 +280,10 @@ public class Player : MonoBehaviour
         if (timesToRecoverManaText != null)
         {
             timesToRecoverManaText.text = timesToRecoverMana.ToString();
+        }
+        if (componentAI != null)
+        {
+            finalEnemyLife = finalLife = 0;
         }
     }
 }

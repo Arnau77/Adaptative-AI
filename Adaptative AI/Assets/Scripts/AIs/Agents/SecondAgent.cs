@@ -13,8 +13,6 @@ public class SecondAgent : Agent
     float reward = 0;
     public bool training = false;
     public float rewardMultiplier = 0.5f;
-    private int lastMatch = 0;
-    private float minLifeToChangeLevelInstantly = 90;
     public bool outOfMoves = false;
 
     public override void OnEpisodeBegin()
@@ -47,18 +45,6 @@ public class SecondAgent : Agent
                     reward += 1f * rewardMultiplier;
                     Debug.Log("Victory!");
                 }
-                if (lastMatch == 1 || aiAgent.player.getLife() >= minLifeToChangeLevelInstantly)
-                {
-                    lastMatch = 0;
-                    if (rewardMultiplier > 0.0f)
-                    {
-                        //rewardMultiplier -= 0.1f;
-                    }
-                }
-                else
-                {
-                    lastMatch = 1;
-                }
             }
             else
             {
@@ -73,19 +59,6 @@ public class SecondAgent : Agent
                     Debug.Log("Out Of Moves");
                     outOfMoves = false;
                 }
-                else if (lastMatch == -1 || aiAgent.player.enemy.getLife() >= minLifeToChangeLevelInstantly )
-                {
-                    lastMatch = 0;
-                    if (rewardMultiplier < 1.0f)
-                    {
-                        //rewardMultiplier += 0.1f;
-                    }
-                }
-                else
-                {
-                    lastMatch = -1;
-                }
-
             }
             if (training)
             {
