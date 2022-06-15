@@ -58,9 +58,21 @@ public class PlayerAI : Player
                 }
             }
         }
+        ChangeLevelOfAI(level);
+        base.Reset();
+    }
+
+    public void ChangeLevelOfAI(int newLevel)
+    {
+        level = newLevel;
+
         levelOfAI.text = level.ToString();
 
         componentAI = ais[level].GetComponent<AIAgent>();
-        base.Reset();
+    }
+
+    public void ChangeNumberOfVictoriesToChangeLevel(int newNumber)
+    {
+        totalOfMatchesToWinToChangeLevel = newNumber;
     }
 }

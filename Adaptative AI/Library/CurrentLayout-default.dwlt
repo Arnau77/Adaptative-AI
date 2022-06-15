@@ -122,10 +122,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 709, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 709, y: 471}
+  m_MaxSize: {x: 18004, y: 14021}
   vertical: 1
-  controlID: 34
+  controlID: 166
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,8 +173,8 @@ MonoBehaviour:
     y: 0
     width: 513
     height: 947
-  m_MinSize: {x: 232, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 232, y: 471}
+  m_MaxSize: {x: 10002, y: 14021}
   vertical: 1
   controlID: 58
 --- !u!114 &8
@@ -245,10 +245,10 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 947
-  m_MinSize: {x: 709, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 709, y: 471}
+  m_MaxSize: {x: 18004, y: 14021}
   vertical: 0
-  controlID: 35
+  controlID: 167
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -436,9 +436,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 1488ffff2688ffff4088ffffa889ffffba89ffffd489ffff7e99ffff9099ffffaa99ffff8a9cffff9c9cffff949dffff4ea5ffff64a5ffffd6b3fffff4b3ffff74b4ffffa4c2ffff42c3ffff54c3ffffa6cafffffee8ffff32f7ffff88faffff56fbffffa6430000fe44000056450000ca450000f845000006470000dc48000058490000164a00004e4a0000b64a0000dc4a0000004b0000164b0000e24b00003a4c00006e4c0000a64c0000c64c00003a4d0000684d00005c510000c4590000a46c0000006f0000426f0000bc6f0000d46f00008a700000769a0000ae9e0000deb4000002b5000018b5000032b5000002b6000078b60000b6b6000026b700009ab70000d2b7000052c3000086c30000aac30000c0c30000aac4000020c500005ec50000a0c50000cec5000042c600007ac600002ad2000068d20000
+      m_SelectedIDs: c2fd0000
+      m_LastClickedID: 64962
+      m_ExpandedIDs: 06a7ffff18a7ffff32a7ffffe8a7fffffaa7fffff0a8ffff7ec0fffff4ccffffaed3ffff1ae7ffff2ae7ffff3ce7ffff6eebffff70ebffff0af5ffff0cf5ffffc4f7ffff8afaffff56fbffffdc4300005c4400007e44000004e60000bae60000dce60000c4fb0000d4fd0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -499,7 +499,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 100
+  m_LastVerticalScrollValue: 0
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -539,20 +539,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Sprites
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Sprites
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Documentos\GitHub\Adaptative-AI\Adaptative AI
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c6420000
-    m_LastClickedID: 17094
-    m_ExpandedIDs: 00000000ac420000ae420000b0420000b2420000b4420000b6420000b8420000ba420000bc420000de42000000ca9a3b
+    m_SelectedIDs: f8420000
+    m_LastClickedID: 17144
+    m_ExpandedIDs: 00000000b0420000b2420000b4420000b6420000b8420000ba420000bc420000c042000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -580,7 +580,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ac420000ae420000b0420000b2420000b4420000b6420000b8420000ba420000bc420000
+    m_ExpandedIDs: 00000000b0420000b2420000b4420000b6420000b8420000ba420000bc420000be420000c0420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -611,18 +611,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 447dffffbe38000090b3feffc44b0000563b0000c2400000863b0000823b0000f25e0000c8730000188e0000d27300002a9300008a39000082390000847700005467000046670000f066000062670000dead000080ae0000cead0000eead00001a770000eaae00000a4900000c790000aed60000a6780000523b0000c6430000985e00006a64000022700000763d0000c06c0000c6880000f86100005a490000664900006a49000062490000684900004855000088750000ba7700009c730000ae77000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: SliderAndInputFieldOptions
+      m_OriginalName: SliderAndInputFieldOptions
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 28546
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 6}
     m_CreateAssetUtility:

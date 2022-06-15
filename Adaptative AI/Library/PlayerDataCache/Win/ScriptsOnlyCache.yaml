@@ -4,12 +4,14 @@ ScriptsOnlyBuild:
     - AIAgent
     - AttackFeedback
     - Button
+    - CloseOptionsButton
     - GameManager
     - HealDefenseAndManaFeedback
     - IncreaseOrDecreaseFeedback
     - Player
     - PlayerAI
     - SecondAgent
+    - SliderAndInputFieldOptions
     - SliderColorChange
     - SpecialAttackFeedback
     Unity.2D.Animation.Editor.dll:
@@ -38,6 +40,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
@@ -81,29 +84,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13572}
     - Class: 114
-      Script: {instanceID: 14150}
+      Script: {instanceID: 13870}
     - Class: 114
-      Script: {instanceID: 14178}
+      Script: {instanceID: 14050}
     - Class: 114
-      Script: {instanceID: 14188}
+      Script: {instanceID: 14152}
     - Class: 114
-      Script: {instanceID: 14498}
+      Script: {instanceID: 14180}
     - Class: 114
-      Script: {instanceID: 14698}
+      Script: {instanceID: 14190}
     - Class: 114
-      Script: {instanceID: 14760}
+      Script: {instanceID: 14500}
     - Class: 114
-      Script: {instanceID: 14934}
+      Script: {instanceID: 14700}
     - Class: 114
-      Script: {instanceID: 15250}
+      Script: {instanceID: 14762}
     - Class: 114
-      Script: {instanceID: 15286}
+      Script: {instanceID: 14936}
     - Class: 114
-      Script: {instanceID: 15338}
+      Script: {instanceID: 15252}
     - Class: 114
-      Script: {instanceID: 15364}
+      Script: {instanceID: 15288}
     - Class: 114
-      Script: {instanceID: 29124}
+      Script: {instanceID: 15340}
+    - Class: 114
+      Script: {instanceID: 15366}
+    - Class: 114
+      Script: {instanceID: 19084}
+    - Class: 114
+      Script: {instanceID: 28546}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -599,6 +608,12 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 6038117cbfeeb7e5f4698b9eed07cc39
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerAI
+  - hash:
+      serializedVersion: 2
       Hash: e5c09eee9593c41922324e29c0a2e768
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -821,10 +836,16 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 6038117cbfeeb7e5f4698b9eed07cc39
+      Hash: 740ffc6fa43a3178fe72c23660a16f29
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlayerAI
+    className: CloseOptionsButton
+  - hash:
+      serializedVersion: 2
+      Hash: fec3483c97bf09b42a8d0c0d689d9924
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SliderAndInputFieldOptions
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainScene.unity
